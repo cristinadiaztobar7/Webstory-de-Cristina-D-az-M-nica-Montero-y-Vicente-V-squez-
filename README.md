@@ -1,0 +1,14 @@
+## Bases de Datos de las integrantes 
+### Primer documento adjunto
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://atletismo.usplat.cl/torneo/mu20/records/</loc>
+  </url>
+  <url>
+    <loc>https://femachile.cl/ranking-y-records/</loc>
+  </url>
+  <url>
+    <loc>https://www.aarm.cl/web/2024/10/18/ranking-chileno-permanente-mejores-30/</loc>
+  </url>
+</urlset>
