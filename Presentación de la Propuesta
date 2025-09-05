@@ -16,5 +16,33 @@ competencias de forma visual y atractiva.
 El rendimiento del atletismo en Chile en los Juegos Sudamericanos ha mejorado en las últimas tres décadas gracias a la inversión en programas de alto rendimiento y el fortalecimiento de la infraestructura deportiva nacional.
 
 ## Historia Visual
+Nuestra investigación nace del interés por comprender cómo ha evolucionado el rendimiento del atletismo chileno en las últimas tres décadas, específicamente en el contexto de los Juegos Sudamericanos, uno de los eventos deportivos más relevantes de la región.
 
+En particular, queremos observar esta evolución a través de las distintas categorías etarias: U18, U20, U23 y Adulto, lo que nos permitirá analizar si el desarrollo de talentos jóvenes tiene una correlación con el rendimiento en la categoría adulta.
+
+Lo novedoso de nuestro proyecto es que no solo nos enfocamos en los resultados actuales, sino que realizamos una revisión histórica y comparativa con otros países latinoamericanos. 
+
+Queremos construir una línea de tiempo que permita identificar patrones de crecimiento, estancamiento o retroceso del atletismo chileno en relación con sus pares regionales.
+
+Además, buscamos integrar elementos visuales e interactivos que permitan contar esta evolución de una forma más atractiva y accesible para el público general, entrenadores, deportistas y tomadores de decisiones del deporte.
+
+Nos gustaría incluir los siguientes elementos digitales:
+1. Línea de tiempo interactiva
+* Qué mostraría: Evolución del rendimiento chileno por año y categoría.
+* Cómo ayuda: Permite visualizar de manera clara los avances o retrocesos a lo largo del tiempo.
+* Ejemplo: Knight Lab TimelineJS. Para crear líneas de tiempo visuales e interactivas.
+
+2. Gráficos comparativos animados
+* Qué mostraría: Comparación de medallas por país en cada edición, o de marcas por disciplina.
+* Cómo ayuda: Hace evidente el lugar que ocupa Chile frente a sus competidores regionales.
+* Ejemplo: Flourish. Usado para gráficos animados tipo "bar chart race" o mapas de calor.
+
+3. Dashboard interactivo
+* Qué mostraría: Panel con filtros por país, género, disciplina, categoría y año.
+* Cómo ayuda: Entrega al usuario una forma personalizada de explorar los datos.
+* Ejemplo: Tableau Public. Para visualizar grandes volúmenes de datos deportivos.
+
+Ejemplo de inspiración (parecido al que vimos en clases):
+
+El proyecto “The Evolution of the 100m Sprint” en The New York Times muestra cómo ha evolucionado la velocidad en los 100m planos. Esto se puede adaptar a tu proyecto para mostrar evolución de las marcas chilenas.
 ## Resultados
