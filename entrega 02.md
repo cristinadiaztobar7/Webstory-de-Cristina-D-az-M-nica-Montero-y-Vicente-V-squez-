@@ -13,3 +13,5 @@ Las bases de datos nos estan proporcionando la información sobre los resultados
 Por ahora podemos ver que 
 
 ### Síntesis de la historia: 
+Estas bases de datos demuestran el progreso de los atletas chilenos en los Juegos Panamericanos y nos permiten identificar los avances y retrocesos en todas las disciplinas dentro del atletismo. 
+Esa webstory busca analizar el desempeño de los atletas nacionales y analizar las causas de este.
