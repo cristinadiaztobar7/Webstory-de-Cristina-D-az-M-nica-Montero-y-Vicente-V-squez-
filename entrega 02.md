@@ -10,7 +10,7 @@ Ha mejorado el rendimiento de los atletas chilenos en atletismo en los Juegos Pa
 
 ### Avance de su proyecto en relación con la hipótesis y preguntas de investigación: 
 Las bases de datos nos estan proporcionando la información sobre los resultados de los atletas en los Juegos Panamericanos, de esta manera estamos viendo que posiciones consiguieron y el progreso en cuanto a las marcas. 
-Por ahora podemos ver que 
+Por ahora podemos ver que los resultados de los Juegos Panamericanos se centran principalmente en los primeros lugares, quedando varias veces Chile inclusive fuera de los registros. 
 
 ### Síntesis de la historia: 
 Estas bases de datos demuestran el progreso de los atletas chilenos en los Juegos Panamericanos y nos permiten identificar los avances y retrocesos en todas las disciplinas dentro del atletismo. 
