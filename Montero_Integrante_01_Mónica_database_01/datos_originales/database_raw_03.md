@@ -1,1 +1,1 @@
-https://worldathletics.org/competition/calendar-results/results/7144863?eventId=10229630&gender=M
+Fuente: World Athletics, “Resultados del evento 10229630 en los Juegos Panamericanos 2003”. Disponible en: [https://worldathletics.org/competition/calendar-results/results/7144863?eventId=10229630&gender=M](https://worldathletics.org/competition/calendar-results/results/7144863?eventId=10229630&gender=M) (consultado el 24 de septiembre de 2025).
