@@ -1,2 +1,1 @@
-https://en.wikipedia.org/wiki/Athletics_at_the_2003_Pan_American_Games
-
+Fuente: Wikipedia, “Athletics at the 2003 Pan American Games”. Disponible en: [https://en.wikipedia.org/wiki/Athletics_at_the_2003_Pan_American_Games](https://en.wikipedia.org/wiki/Athletics_at_the_2003_Pan_American_Games) (consultado el 24 de septiembre de 2025).
