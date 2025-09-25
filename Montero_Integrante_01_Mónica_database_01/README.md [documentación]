@@ -1,1 +1,32 @@
+Documentación del Proceso de Limpieza de Datos
+Introducción
+Este documento explica cómo se recopilaron, limpiaron y organizaron los datos de atletismo de los Juegos Panamericanos desde 2003 - 2023, enfocándose en los deportistas chilenos. El objetivo es garantizar transparencia y replicabilidad, mostrando cómo los datos fueron seleccionados para responder la hipótesis y preguntas de investigación.
+La base final permite analizar medallas, participación por disciplina, recurrencia de atletas y edad de los medallistas, facilitando análisis claros y precisos.
+Búsqueda de Datos
+Se consultaron diversas fuentes: páginas oficiales de los Juegos Panamericanos, archivos PDF históricos y sitios web que consolidan resultados de atletismo. Se priorizó la información relevante a deportistas chilenos, descartando registros que no cumplían las marcas mínimas o en los que no había participación nacional.
+Limpieza y Organización
+1.	Definición de Variables: nombre del atleta, país, disciplina, posición, marca, edad y participación en distintas ediciones.
+2.	Transcripción Manual: ingreso de datos desde fuentes originales a la base estructurada.
+3.	Validación: revisión de consistencia y corrección según las fuentes.
+4.	Preparación para Análisis: base lista para generar tablas dinámicas y comparaciones entre juegos y disciplinas.
+Herramientas
+Se utilizaron:
+•	ChatGPT y Gemini: para localizar información y verificar datos.
+•	Google: para encontrar páginas oficiales y documentos relevantes.
+•	Excel: para transcripción, tablas dinámicas y revisión de consistencia.
+
+Fuentes
+Las fuentes se eligieron por confiabilidad y relevancia:
+1.	Wikipedia, “Athletics at the 2003 Pan American Games”. Disponible en: https://en.wikipedia.org/wiki/Athletics_at_the_2003_Pan_American_Games. Consultado el 24 de septiembre de 2025. Utilizada cuando no había registros oficiales accesibles.
+2.	World Athletics, resultados del evento 10229630 en los Juegos Panamericanos 2003. Disponible en: https://worldathletics.org/competition/calendar-results/results/7144863?eventId=10229630&gender=M. Consultado el 24 de septiembre de 2025. Fuente oficial para marcas y posiciones.
+3.	La Historia del Atletismo de El Salvador, resultados de los Juegos Panamericanos. Disponible en: https://atletismoelsalvador.org/resultados-de-juegos/resultados-juegos-panamericanos/. Consultado el 24 de septiembre de 2025. Complementa y valida información histórica.
+Preguntas de Análisis
+La base permite responder:
+1.	¿Cuántos deportistas chilenos quedaron entre los tres primeros lugares y en qué disciplinas?
+2.	¿Cuántos atletas han competido en más de una edición y en qué disciplinas?
+3.	¿Cuál es la edad promedio de los medallistas y cómo se distribuyen las medallas por disciplina?
+4.	Comparación de marcas y posiciones entre diferentes ediciones o disciplinas para identificar tendencias y mejoras.
+Conclusión
+El proceso asegura que la base es transparente, replicable y enfocada en los objetivos de investigación. Cada paso, desde la búsqueda hasta la limpieza manual y estructuración, fue documentado para que otros puedan reproducir el análisis. La base limpia y las fuentes originales ofrecen un marco confiable para construir una narrativa sólida sobre el desempeño de los deportistas chilenos en los Juegos Panamericanos de 2003 - 2023.
+
 
