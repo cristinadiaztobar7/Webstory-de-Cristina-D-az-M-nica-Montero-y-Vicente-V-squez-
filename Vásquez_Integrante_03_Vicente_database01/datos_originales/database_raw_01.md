@@ -1,0 +1,1 @@
+Fuente: Asociacón Panamericana de Atletismo, Resultados Juegos Panamericanos. Disponible en: https://www.athleticspanam.com/ver2/resultados-juegos-panamericanos/  (consultado el 26 de septiembre de 2025).

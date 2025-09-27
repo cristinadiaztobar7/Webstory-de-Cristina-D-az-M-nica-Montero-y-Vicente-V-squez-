@@ -1,0 +1,1 @@
+Fuente: Juegos Panam 2023 Santiago, Schedule Event. Disponible en: https://results-santiago2023.org/#/discipline/ATH/schedule/by-event/M.100M-------------- (consultado el 27 de septiembre de 2025).
