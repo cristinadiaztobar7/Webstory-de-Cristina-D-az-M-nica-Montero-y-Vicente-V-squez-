@@ -49,11 +49,12 @@ Principalmente Chile.
 
 ### Variables incluidas  
 
+
 | Variable     | Descripción                          |
 |--------------|--------------------------------------|
 | **Nombre**   | Nombre completo de la atleta         |
 | **Edad**     | Edad de la atleta                    |
-| **Disciplina** |disciplina de atletismo en la que compite           |
+| *Disciplina* | disciplina de atletismo              |
 | **País**     | Nacionalidad de la atleta            |
 | **Marca**    | Resultado deportivo alcanzado        |
 | **Año**      | Año de la competencia                |
@@ -68,3 +69,4 @@ Principalmente Chile.
 
 -  `mujeres.csv` → Base de datos limpia en formato CSV  
 - `README.md` → Documentación individual y ficha técnica  
+
