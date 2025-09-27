@@ -1,1 +1,34 @@
-dsdsd
+Documentación del Proceso de Limpieza de Datos
+
+Uno de los pasos más importantes de este proceso previo a comenzar a recopilar los datos y limpiarlo es poder saber cuáles son las variables necesarias para tener una base de datos que solamente contenga la información necesaria. 
+Para esto se enmarcó la invstigación en un sujeto específico: atletas chilenas que hayan participado en cualquier discliplina de atletismo durante los Juegos Panamericanos realizados en 2003, 2007, 2011, 2015, 2019 y 2023. 
+Esto nos permite poder limitar nuestra investigación y analizar solo una parte de la gran cantidad de datos que nos encontraremos.
+Lo que busca la base final es poder analizar la cantidad de atletas, sus nombres, disciplinas, marcas, etc. que forman parte de la muestra. 
+Para poder recopilar esta información utilicé fuentes y documentos oficiales de los Juegos Panamericanos, así como PDFs y registros que solo se dedican a almacenar información del atletismo. 
+
+Limpieza y organización:
+1. Definición de variables: nombre del deportista, año de participación, sede de los Juegos Panamericanos, categoría a la que pertenecen, disciplina, fase en la que participaron, resultado o marca de cada participación, puesto que ocuparon en la clasificación y si obtuvieron alguna medalla.
+2. Transcripción manual: Datos son ingresados desde los documentos oficiales hasta el excel con las diersas variables.
+3. Validación: confirmación de datos y correción de estos de ser necesarios.
+4.	Preparación para Análisis: base lista para generar tablas dinámicas y comparaciones entre juegos y disciplinas.
+
+Herramientas utilizadas:
+- GhatGPT para ubicar algunas de las fuentes que contenían la información
+- Excel como herramienta principal para ordenar los datos y entregarles variables
+- Google para hacer búsqueda de datos e información.
+
+Fuentes:
+Las fuentes elegidas para recopilar los datos fueron.
+1. Asociacón Panamericana de Atletismo, Resultados Juegos Panamericanos. Disponible en: https://www.athleticspanam.com/ver2/resultados-juegos-panamericanos/  (consultado el 26 de septiembre de 2025).
+2. uegos Panam 2023 Santiago, Schedule Event. Disponible en: https://results-santiago2023.org/#/discipline/ATH/schedule/by-event/M.100M-------------- (consultado el 27 de septiembre de 2025).
+3. Atletismo El Salvador, “Resultados Juegos Panamericanos”. Disponible en: [https://atletismoelsalvador.org/resultados-de-juegos/resultados-juegos-panamericanos/](consultado el 26 de septiembre de 2025).
+
+Preguntas de análisis que se pueden responder con la tabla:
+1. ¿Cuántas atletas chilenas han participado en los Juegos Panamericanos entre 2003 y 2023?
+2. ¿Cuáles son las atlteas chilenas que más medallas han ganado y en qué disciplinas?
+3. ¿Cuáles son las mejores marcas que han tenido atletas chilenas en cada disciplina?
+4. ¿En qué edición han participado más atletas chilenas?
+
+Conclusión:
+En base al proceso y la metodología manual utilizada podemos afirmar que la base de datos está realizada a partir de la información necesaria, dejando de lado cualquier dato erróneo o mal tipeado anteriormente. La base podrá ser utilizada en un futuro ya que no existe ningún registro que solamente tenga información de atletas chilenas en este contexto, por lo que también podrá ayudar a otros investigadores a realizar el mismo proceso pero con otros fines.
+ 
