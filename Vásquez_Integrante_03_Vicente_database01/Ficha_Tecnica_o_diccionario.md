@@ -1,23 +1,28 @@
-# Ficha Técnica de la Base de Datos
+# Ficha Técnica Base de datos
 
 ## Fuente de los datos
-- Wikipedia: "Athletics at the Pan American Games" para cada edición consultada (2003, 2007, 2011, 2015, 2019 y 2023).  
-  https://en.wikipedia.org/wiki/Athletics_at_the_2003_Pan_American_Games  
-- World Athletics: resultados oficiales de cada edición.  
-  Ejemplo 2023: https://worldathletics.org/competition/calendar-results/results/7144863?eventId=10229630&gender=M  
-- La Historia del Atletismo de El Salvador: resultados históricos de los Juegos Panamericanos.  
-  https://atletismoelsalvador.org/resultados-de-juegos/resultados-juegos-panamericanos/
+- Asociacón Panamericana de Atletismo, Resultados Juegos Panamericanos de las ediciones 2003, 2007, 2011, 2015, 2019 y 2023.
+
+  https://www.athleticspanam.com/ver2/resultados-juegos-panamericanos/  
+
+- Juegos Panam 2023 Santiago, Schedule Event. Organización y resultados de cada una de las competiciones realizadas con fecha y hora.
+
+  https://results-santiago2023.org/#/discipline/ATH/schedule/by-event/M.100M-------------- 
+
+- Fuente: Fuente: Atletismo El Salvador, “Resultados Juegos Panamericanos” donde podemos ver el resultado de cada una competencias de atletismo realizadas en las ediciones entre 2003 y 2023.
+
+  https://atletismoelsalvador.org/resultados-de-juegos/resultados-juegos-panamericanos/ 
 
 ## Metodología de construcción
-- Se recopilaron datos de todas las ediciones entre 2003 y 2023 de fuentes oficiales y confiables.  
-- Se filtraron los registros correspondientes únicamente a deportistas chilenos.  
-- La limpieza fue manual, incluyendo: corrección de nombres, estandarización de fechas, marcas y posiciones, eliminación de duplicados y registros no relevantes.  
-- Se organizaron las variables de manera que faciliten responder la hipótesis y preguntas de investigación.
+- Los datos fueron recopilados de las fuentes oficiales que participaron de la organización de los eventos entre 2003 y 2023
+- La limpieza de los datos fue de forma manual, por lo que cualquier dato que está inscrito en la base de datos está estandarizado en base a las necesidades del proyecto, eliminando datos no relevantes.
+
+- Se realizaron tablas con variables que nos permiten identificar solamente a deportistas del género femenino, que forman parte del equipo chileno y que han participado de competencias de atletismo.
 
 ## Alcance de los datos
-- Cobertura: atletas chilenos en los Juegos Panamericanos de 2003, 2007, 2011, 2015, 2019 y 2023.  
-- Incluye todas las disciplinas y pruebas en las que participaron atletas chilenos.  
-- Permite analizar medallas, participación por disciplina, recurrencia de atletas, edad y desempeño histórico.
+- Cobertura: atletas chilenas participantes de los Juegos Panamericanos de 2003, 2007, 2011, 2015, 2019 y 2023.
+- Son tomadas en cuenta todas las disciplinas del atletismo en los que hayan participado deportistas chilenas.  
+- Incluye el análisis de cada deportista, año de participación, sede de los Juegos Panamericanos, categoría a la que pertenecen, disciplina, fase en la que participaron, resultado o marca de cada participación, puesto que ocuparon en la clasificación y si obtuvieron alguna medalla.
 
 ## Característica de los datos
 - Tipo de datos: mixto (numéricos, texto, fechas).  
@@ -30,20 +35,16 @@
 | Variable               | Descripción                                                                 |
 |------------------------|----------------------------------------------------------------------------|
 | Año                    | Año de la edición de los Juegos Panamericanos                                |
-| Nombre                 | Nombre completo del atleta                                                 |
-| Disciplina             | Nombre de la disciplina                                                    |
-| Tipo de prueba         | Clasificación de la prueba (pista, campo, relevos, etc.)                  |
-| Unidad de Medida       | Unidad en la que se registra la marca (segundos, metros, etc.)            |
-| Marca                  | Resultado obtenido por el atleta                                           |
-| Posición               | Posición final en la prueba                                                |
-| Total de competidores  | Número total de atletas que compitieron en la prueba                       |
-| Récord (SB, PB)        | Indica si la marca corresponde a su mejor marca de la temporada (SB) o personal (PB) |
-| Fecha de nacimiento     | Fecha de nacimiento del atleta                                             |
-| Edad                   | Edad del atleta durante la edición de los Juegos                            |
-| Instancia              | Etapa de la prueba (clasificación, semifinal, final)                       |
+| País                 | País donde se realizaron los Juegos Panamericanos                                               |
+| Categoría            | Géneros que compiten en aquella categoría                                             |
+| Nombre del atleta        | Nombre de la deportista              |
+| Disciplina      | Nombre de la disciplina    |
+| Fase                  | Etapa de cada competencia                                |
+| Marca/resultado              | Marca realizada por la atleta                           |
+| Puesto  | Posición final de la clasificación que ocupa la deportista                     |
+| Medalla        | Indica si la deportista ganó una medalla                 |
 
 ## Otras observaciones
-- La base incluye únicamente atletas chilenos.  
-- Se utilizaron varias fuentes para completar información histórica y validar resultados.  
-- El orden de los registros sigue la cronología de las ediciones y la estructura de la fuente oficial siempre que fue posible.  
-- Las variables fueron definidas para permitir análisis de desempeño, tendencias históricas y comparaciones entre atletas y disciplinas.
+- La base solamente toma a atletas femeninas chilenas.
+- La información fue contrastada entre diversas fuentes oficiales y confiables 
+- Todas las variables permiten identificar cuantas veces participó cada atleta entre 2003 y 2023, además de saber cuántas disciplinas realizó y sus mejores marcas en cada edición.
