@@ -3,10 +3,8 @@
 **Nombre:** Mónica Montero  
 **Proyecto grupal:** Rendimiento de atletas chilenos en los Juegos Panamericanos  
 **Visualización individual:** Resultados masculinos en atletismo (1951–2023)  
-**Curso:** Taller de Visualización de Datos  
-**Docente:** [Nombre del/la profesora — reemplázalo aquí]  
-**Institución:** [Nombre universidad o facultad]  
-**Fecha de entrega:** [Completar con la fecha actual]
+**Curso:** Narración Gráfica
+**Institución:** PUC
 
 **Objetivo:**  
 Explorar la evolución del rendimiento de los atletas chilenos hombres en distintas disciplinas del atletismo durante los Juegos Panamericanos, destacando los avances en marcas y su relación con el contexto histórico del deporte nacional.
