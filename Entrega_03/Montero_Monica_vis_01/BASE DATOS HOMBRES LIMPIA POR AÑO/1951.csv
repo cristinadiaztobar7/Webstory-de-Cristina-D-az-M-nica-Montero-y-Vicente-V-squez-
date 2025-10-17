@@ -1,8 +1,8 @@
 gender,event,round,heat,position,name,country,mark,status,date,location,members,observacion
-Men,100 METRES,HEAT,3.0,2,Fernando Salinas Acuna,Chile,11.1,,,"Buenos Aires, Argentina",, 
-Men,100 METRES,HEAT,4.0,4,Leonel Contreras,Chile,11.5,,,"Buenos Aires, Argentina",, 
-Men,100 METRES,HEAT,5.0,4,Rodolfo López Neira,Chile,,,,"Buenos Aires, Argentina",,sin marca
-Men,100 METRES,HEAT,2.0,1,Fernando Salinas Acuna,Chile,10.9,,,"Buenos Aires, Argentina",, 
+Men,100 METRES,HEAT,3,2,Fernando Salinas Acuna,Chile,11.1,,,"Buenos Aires, Argentina",,
+Men,100 METRES,HEAT,4,4,Leonel Contreras,Chile,11.5,,,"Buenos Aires, Argentina",,
+Men,100 METRES,HEAT,5,4,Rodolfo López Neira,Chile,,,,"Buenos Aires, Argentina",,sin marca
+Men,100 METRES,HEAT,2,1,Fernando Salinas Acuna,Chile,10.9,,,"Buenos Aires, Argentina",,
 Men,100 METRES,,,5,Fernando Salinas Acuna,Chile,11.1,,,"Buenos Aires, Argentina",,válido
 Men,200 METRES,HEAT,2,3,Gustavo Ehlers Trostel,Chile,22.5,,,"Buenos Aires, Argentina",,válido
 Men,200 METRES,HEAT,3,2,Leonel Contreras,Chile,23.3,,,"Buenos Aires, Argentina",,válido
@@ -27,7 +27,6 @@ Men,400 METRES HURDLES,FINAL,,4,Reinaldo Martin Muller,Chile,55.2,,28 Feb,"Bueno
 Men,3000 METRES,FINAL,,5,Guillermo Solá Aravena,Chile,10:10.3,,28 Feb,"Buenos Aires, Argentina",,válido
 Men,4x100 METRES RELAY,HEAT,,4,Chile,Chile,42.3,,6 Mar,"Buenos Aires, Argentina","L.Contreras; R.Lopez; G.Ehlers; F.Salinas",válido
 Men,4x400 METRES RELAY,FINAL,,2,Chile,Chile,3:17.7,,6 Mar,"Buenos Aires, Argentina","Jaime Hitelman Reitich; Jorn Gevert; Reinaldo Martin Muller; Gustavo Ehlers Trostel",válido
-
 
 
 
