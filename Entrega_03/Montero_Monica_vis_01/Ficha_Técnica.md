@@ -4,7 +4,7 @@
 **Proyecto grupal:** Rendimiento de atletas chilenos en los Juegos Panamericanos  
 **Visualización individual:** Resultados masculinos en atletismo (1951–2023)  
 **Curso:** Narración Gráfica
-**Institución:** PUC
+**Institución:** Pontificia Universidad Católica de Chile
 
 **Objetivo:**  
 Explorar la evolución del rendimiento de los atletas chilenos hombres en distintas disciplinas del atletismo durante los Juegos Panamericanos, destacando los avances en marcas y su relación con el contexto histórico del deporte nacional.
@@ -16,9 +16,7 @@ Los archivos originales fueron entregados por la profesora en formato CSV y post
 
 **Software y librerías utilizadas:**  
 - Python  
-- Pandas (limpieza y estructuración de datos)  
 - Altair (visualización interactiva)  
-- Google Colab  
 
 **Archivos asociados:**  
 - `vis_01.html` → versión interactiva del gráfico  
