@@ -1,7 +1,6 @@
 gender,event,round,heat,position,name,country,mark,status,date,location,members,observacion
 Men,100 METRES,HEAT,3,2,Fernando Salinas Acuna,Chile,11.1,,,"Buenos Aires, Argentina",,
 Men,100 METRES,HEAT,4,4,Leonel Contreras,Chile,11.5,,,"Buenos Aires, Argentina",,
-Men,100 METRES,HEAT,5,4,Rodolfo López Neira,Chile,,,,"Buenos Aires, Argentina",,sin marca
 Men,100 METRES,HEAT,2,1,Fernando Salinas Acuna,Chile,10.9,,,"Buenos Aires, Argentina",,
 Men,100 METRES,,,5,Fernando Salinas Acuna,Chile,11.1,,,"Buenos Aires, Argentina",,válido
 Men,200 METRES,HEAT,2,3,Gustavo Ehlers Trostel,Chile,22.5,,,"Buenos Aires, Argentina",,válido
@@ -19,8 +18,7 @@ Men,5000 METRES,FINAL,,3,Gustavo Rojas Rodriguez,Chile,15:06.4,,5 Mar,"Buenos Ai
 Men,MARATHON,FINAL,,5,Enrique Inostroza Aranciba,Chile,2:53:01.0,,5 Mar,"Buenos Aires, Argentina",,válido
 Men,MARATHON,FINAL,,6,David Penden Gajardo,Chile,2:53:58.3,,5 Mar,"Buenos Aires, Argentina",,válido
 Men,110 METRES HURDLES,HEAT,2,3,Jorn Gevert,Chile,15.4,,3 Mar,"Buenos Aires, Argentina",,válido
-Men,110 METRES HURDLES,HEAT,2,3,Jorn Gevert,Chile,55.4,,3 Mar,"Buenos Aires, Argentina",,fuera de rango (parece 400m hurdles)
-Men,110 METRES HURDLES,HEAT,3,4,Udo Martin Huber,Chile,,,3 Mar,"Buenos Aires, Argentina",,sin marca
+Men,400 METRES HURDLES,HEAT,2,3,Jorn Gevert,Chile,55.4,,3 Mar,"Buenos Aires, Argentina",,fuera de rango (parece 400m hurdles)
 Men,400 METRES HURDLES,HEAT,,2,Reinaldo Martin Muller,Chile,54.3,Q,27 Feb,"Buenos Aires, Argentina",,válido
 Men,400 METRES HURDLES,FINAL,,4,Reinaldo Martin Muller,Chile,55.2,,28 Feb,"Buenos Aires, Argentina",,válido
 Men,3000 METRES,FINAL,,5,Guillermo Solá Aravena,Chile,10:10.3,,28 Feb,"Buenos Aires, Argentina",,válido
