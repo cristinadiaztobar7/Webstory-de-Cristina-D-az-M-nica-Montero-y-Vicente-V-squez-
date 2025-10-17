@@ -4,6 +4,7 @@
 **Proyecto grupal:** Rendimiento de atletas chilenos en los Juegos Panamericanos  
 **Visualización individual:** Resultados masculinos en atletismo (1951–2023)  
 **Curso:** Narración Gráfica
+
 **Institución:** Pontificia Universidad Católica de Chile
 
 **Objetivo:**  
