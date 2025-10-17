@@ -1,9 +1,9 @@
 gender,event,round,heat,position,name,country,mark,status,date,location,members,observacion
-Men, 100 METRES, HEAT, 4.0, 3, Kael Becerra, Chile, 10.32, , , "Rio de Janeiro, Brazil", ,
-Men, 100 METRES, HEAT, 2.0, 6, Kael Becerra, Chile, 10.43, , , "Rio de Janeiro, Brazil", ,
+Men, 100 METRES, HEAT, 4, 3, Kael Becerra, Chile, 10.32, , , "Rio de Janeiro, Brazil", ,
+Men, 100 METRES, HEAT, 2, 6, Kael Becerra, Chile, 10.43, , , "Rio de Janeiro, Brazil", ,
 Men,"1,500 METRES",FINAL,,9,Leslie Encina,Chile,3:45.99,,25 Jul,"Rio de Janeiro, Brazil",,
-Men,110 METRES HURDLES,HEAT,2.0,6,Francisco Castro,Chile,14.46,,27 Jul,"Rio de Janeiro, Brazil",,
-Men,400 METRES HURDLES,HEAT,2.0,6,Luis Montenegro,Chile,51.58,,25 Jul,"Rio de Janeiro, Brazil",,
+Men,110 METRES HURDLES,HEAT,2,6,Francisco Castro,Chile,14.46,,27 Jul,"Rio de Janeiro, Brazil",,
+Men,400 METRES HURDLES,HEAT,2,6,Luis Montenegro,Chile,51.58,,25 Jul,"Rio de Janeiro, Brazil",,
 Men, 3.000 METRES STEEPLECHASE, FINAL, , 10, Sergio Lobos Araneda, Chile, 9:08.55, , 27 Jul, "Rio de Janeiro, Brazil", ,
 Men,50KM.WALK,,,9,Cristian Bascunan San Martin,Chile,4:24:21,,28 Jul,"Rio de Janeiro, Brazil",,
 Men,SHOT PUT,,,6,Marco Ve rni Lippi,Chile,18.54m,,24 Jul,"Rio de Janeiro, Brazil",,
