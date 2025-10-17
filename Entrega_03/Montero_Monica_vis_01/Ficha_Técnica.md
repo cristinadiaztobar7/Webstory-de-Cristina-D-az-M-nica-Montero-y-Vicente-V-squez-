@@ -1,4 +1,4 @@
-## 📊 Ficha técnica
+## Ficha técnica
 
 **Nombre:** Mónica Montero  
 **Proyecto grupal:** Rendimiento de atletas chilenos en los Juegos Panamericanos  
