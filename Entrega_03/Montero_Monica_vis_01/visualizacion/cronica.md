@@ -8,8 +8,5 @@ En el gráfico se puede ver cómo, desde los años 50, Chile comenzó a particip
 
 Uno de los casos más representativos es el de Lucas Nervi, que en Santiago 2023 logró el primer lugar en lanzamiento del disco, confirmando que Chile puede volver a destacar en estas pruebas. También sobresalen atletas como Carlos Díaz y Hugo Catrileo, quienes mantienen viva la tradición en pruebas de fondo y maratón, mostrando que el atletismo nacional sigue siendo competitivo a nivel continental. Ver cómo las marcas mejoran y se estabilizan con los años ayuda a dimensionar cuánto ha crecido la preparación de los deportistas chilenos.
 
-Esta visualización no pretende dar una respuesta definitiva, sino abrir una conversación sobre cómo las condiciones sociales, el financiamiento y las políticas deportivas han influido en el rendimiento chileno. Los resultados muestran que detrás de cada marca hay décadas de avances, desafíos y sueños. Mirar estos datos con perspectiva histórica permite entender que el deporte, más allá de los podios, también refleja el desarrollo de un país y el esfuerzo de generaciones enteras de atletas.
-
-**Visualización complementaria:**  
-![Visualización de resultados](vis_01.jpg)
+Esta visualización no pretende dar una respuesta definitiva, sino abrir una conversación sobre cómo las condiciones sociales, el financiamiento por medio del apoyo estatal y las políticas deportivas han influido en el rendimiento chileno. Los resultados muestran que detrás de cada marca hay décadas de avances, desafíos y sueños. Mirar estos datos con perspectiva histórica permite entender que el deporte, más allá de los podios, también refleja el desarrollo de un país y el esfuerzo de generaciones enteras de atletas.
 
