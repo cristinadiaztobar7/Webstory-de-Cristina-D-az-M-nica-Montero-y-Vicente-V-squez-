@@ -1,21 +1,22 @@
 gender,event,round,heat,position,name,country,mark,status,date,location,members,observacion
-Men,100 METRES,SEMIFINAL,,15,Enrique Polanco,Chile,10.57,,,,,""
-Men,200 METRES,SEMIFINAL,,13,Enzo Faulbaum,Chile,21.55,,,,,""
-Men,400 METRES,FINAL,,3,Martín Kouyoumdjian,Chile,46.58,,,,,""
-Men,1500 METRES,FINAL,,11,Diego Uribe,Chile,3:45.56,,,,,""
-Men,5000 METRES,FINAL,,7,Ignacio Velásquez,Chile,14:57.21,,,,,""
-Men,10000 METRES,FINAL,,4,Carlos Díaz,Chile,29:22.54,,,,,""
-Men,10000 METRES,FINAL,,8,Ignacio Velásquez,Chile,29:55.69,,,,,""
-Men,MARATHON,FINAL,,2,Hugo Catrileo,Chile,2:12:07,,,,,""
-Men,110 METRES HURDLES,FINAL,,4,Martín Saenz,Chile,14.05,,,,,""
-Men,400 METRES HURDLES,SEMIFINAL,,11,Cristobal Muñoz,Chile,51.57,,,,,""
-Men,400 METRES HURDLES,SEMIFINAL,,12,Alfredo Sepúlveda,Chile,52.34,,,,,""
-Men,3000 METRES STEEPLECHASE,FINAL,,11,Mauricio Valdivia,Chile,9:11.27,,,,,""
-Men,4x400 METRES RELAY,FINAL,,7,Chile,Chile,3:12.40,,,"","Cristobal Muñoz; Sergio Germain; Martín Kouyoumdjian; Martín Zabala"
-Men,HIGH JUMP,FINAL,,12,Pedro Alamos,Chile,2.15,,,,,""
-Men,POLE VAULT,FINAL,,4,Guillermo Correa,Chile,5.40,PB,,,,""
-Men,POLE VAULT,FINAL,,9,Cristobal Nuñez,Chile,,,,,,""
-Men,LONG JUMP,FINAL,,7,Vicente Belgueri,Chile,7.65,PB,,,,""
-Men,TRIPLE JUMP,FINAL,,5,Luis Reyes,Chile,16.30,,,,,""
-Men,SHOT PUT,FINAL,,12,Matías Puschel,Chile,16.20,,,,,""
-Men,DISCUS THROW,FINAL,,1,Lucas Nervi,Chile,63.39,SB,,,,""
+Men,100 METRES,SEMIFINAL,,15,Enrique Polanco,Chile,10.57,,,,, 
+Men,200 METRES,SEMIFINAL,,13,Enzo Faulbaum,Chile,21.55,,,,, 
+Men,400 METRES,FINAL,,3,Martín Kouyoumdjian,Chile,46.58,,,,, 
+Men,1500 METRES,FINAL,,11,Diego Uribe,Chile,3:45.56,,,,, 
+Men,5000 METRES,FINAL,,7,Ignacio Velásquez,Chile,14:57.21,,,,, 
+Men,10000 METRES,FINAL,,4,Carlos Díaz,Chile,29:22.54,,,,, 
+Men,10000 METRES,FINAL,,8,Ignacio Velásquez,Chile,29:55.69,,,,, 
+Men,MARATHON,FINAL,,2,Hugo Catrileo,Chile,2:12:07,,,,, 
+Men,110 METRES HURDLES,FINAL,,4,Martín Saenz,Chile,14.05,,,,, 
+Men,400 METRES HURDLES,SEMIFINAL,,11,Cristobal Muñoz,Chile,51.57,,,,, 
+Men,400 METRES HURDLES,SEMIFINAL,,12,Alfredo Sepúlveda,Chile,52.34,,,,, 
+Men,3000 METRES STEEPLECHASE,FINAL,,11,Mauricio Valdivia,Chile,9:11.27,,,,, 
+Men,4x400 METRES RELAY,FINAL,,7,Chile,Chile,3:12.40,,,,"Cristobal Muñoz; Sergio Germain; Martín Kouyoumdjian; Martín Zabala", 
+Men,HIGH JUMP,FINAL,,12,Pedro Alamos,Chile,2.15,,,,, 
+Men,POLE VAULT,FINAL,,4,Guillermo Correa,Chile,5.40,PB,,,, 
+Men,POLE VAULT,FINAL,,9,Cristobal Nuñez,Chile,,,,,, 
+Men,LONG JUMP,FINAL,,7,Vicente Belgueri,Chile,7.65,PB,,,, 
+Men,TRIPLE JUMP,FINAL,,5,Luis Reyes,Chile,16.30,,,,, 
+Men,SHOT PUT,FINAL,,12,Matías Puschel,Chile,16.20,,,,, 
+Men,DISCUS THROW,FINAL,,1,Lucas Nervi,Chile,63.39,SB,,,, 
+
