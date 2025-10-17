@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Cantidad de medallas por tipo obtenidas por atletas chilenas (1951–2023).",
+  "data": {"name": "dataset"},
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4},
+  "encoding": {
+    "x": {
+      "field": "anio",
+      "type": "ordinal",
+      "title": "Año de los Juegos Panamericanos"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "cantidad",
+      "title": "Cantidad de medallas"
+    },
+    "color": {
+      "field": "medalla",
+      "type": "nominal",
+      "title": "Tipo de medalla",
+      "scale": {
+        "domain": ["Oro", "Plata", "Bronce"],
+        "range": ["#f4c300", "#d7d7d7", "#a97142"]
+      }
+    },
+    "tooltip": [
+      {"field": "anio", "title": "Año"},
+      {"field": "medalla", "title": "Tipo"},
+      {"aggregate": "sum", "field": "cantidad", "title": "Cantidad"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "legend": {"orient": "top"},
+    "axis": {"labelFontSize": 12, "titleFontSize": 13}
+  },
+  "width": 700,
+  "height": 400
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
