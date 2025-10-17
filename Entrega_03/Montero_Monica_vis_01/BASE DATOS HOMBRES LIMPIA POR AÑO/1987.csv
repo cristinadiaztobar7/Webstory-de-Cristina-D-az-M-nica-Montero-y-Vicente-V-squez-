@@ -1,7 +1,7 @@
 gender,event,round,heat,position,name,country,mark,status,date,location,members,observacion
-Men,,HEAT,2,6,Javier Widoycovich,Chile,10.99,,,"Indianapolis, USA",,
-Men,,HEAT,3,3,Carlos Moreno Lira,Chile,10.40,,,"Indianapolis, USA",,
-Men,,HEAT,2,7,Carlos Moreno Lira,Chile,10.37,,,"Indianapolis, USA",,
+Men,100 METRES,HEAT,2,6,Javier Widoycovich,Chile,10.99,,,"Indianapolis, USA",,
+Men,100 METRES,HEAT,3,3,Carlos Moreno Lira,Chile,10.40,,,"Indianapolis, USA",,
+Men,100 METRES,HEAT,2,7,Carlos Moreno Lira,Chile,10.37,,,"Indianapolis, USA",,
 Men,100 METRES,HEAT,3,5,Carlos Moreno Lira,Chile,21.82,,10 Aug,"Indianapolis, USA",,
 Men,200 METRES,HEAT,2,7,Carlos Moreno Lira,Chile,21.78,,13 Aug,"Indianapolis, USA",,
 Men,400 METRES,HEAT,1,2,Manuel Balmaceda Olavarriete,Chile,1:49.14,,12 Aug,"Indianapolis, USA",,
