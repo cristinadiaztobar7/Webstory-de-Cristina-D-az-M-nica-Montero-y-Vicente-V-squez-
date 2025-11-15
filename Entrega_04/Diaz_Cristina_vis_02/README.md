@@ -42,11 +42,6 @@ Esto es un hallazgo importante que conversa con tu crónica: la invisibilizació
 
 ## Reactivación en los años 70–90
 
-Reaparecen nombres con marcas destacadas, como:
-	•	Lisette Roidt,
-	•	Marion Huber von Appen,
-	•	Macarena Reyes,
-
 lo que coincide con el desarrollo de programas deportivos más estructurados.
 
 ## El salto del siglo XXI: mayor variedad de disciplinas y estabilidad
