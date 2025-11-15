@@ -64,9 +64,9 @@ El moodboard reúne imágenes cenitales de:
 
 | Color | HEX | Uso | % |
 |------|------|------|------|
-| Arena foso | `#D8C29A` | Separadores de secciones | 10% |
-| Verde pasto | `#2E6A3B` | Encabezados, énfasis | 5% |
-| Naranja cono | `#F28C28` | Iconos y callouts | 5% |
+| Arena foso | `#E5AC3F` | Separadores de secciones | 10% |
+| Verde pasto | `#2B6129` | Encabezados, énfasis | 5% |
+| Naranja cono | `#FF7817` | Iconos y callouts | 5% |
 
 **Justificación:**  
 Los colores provienen directamente de los materiales reales usados en atletismo (tartán, tiza, pasto, arena, conos).  
