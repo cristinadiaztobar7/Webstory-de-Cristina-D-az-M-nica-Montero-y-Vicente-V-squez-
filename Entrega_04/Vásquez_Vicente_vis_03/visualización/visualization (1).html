@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"anio": 2015, "Subsecretaría": 5570409, "IND": 125521455},
+      {"anio": 2016, "Subsecretaría": 6268089, "IND": 135632908},
+      {"anio": 2017, "Subsecretaría": 6605449, "IND": 127053829},
+      {"anio": 2018, "Subsecretaría": 7185197, "IND": 114582339},
+      {"anio": 2019, "Subsecretaría": 7753173, "IND": 124529474},
+      {"anio": 2020, "Subsecretaría": 7797640, "IND": 133905352},
+      {"anio": 2021, "Subsecretaría": 6849545, "IND": 146145209},
+      {"anio": 2022, "Subsecretaría": 6968643, "IND": 241709400},
+      {"anio": 2023, "Subsecretaría": 12317969, "IND": 481792384},
+      {"anio": 2024, "Subsecretaría": 9439003, "IND": 178558764},
+      {"anio": 2025, "Subsecretaría": 9423792, "IND": 185691729}
+    ]
+  },
+  "transform": [{"fold": ["Subsecretaría", "IND"], "as": ["Fuente", "Monto"]}],
+  "mark": {"type": "bar", "width": {"band": 0.5}},
+  "encoding": {
+    "x": {
+      "field": "anio",
+      "type": "ordinal",
+      "title": "Año",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "Monto",
+      "type": "quantitative",
+      "title": "Monto (miles de pesos)"
+    },
+    "color": {
+      "field": "Fuente",
+      "type": "nominal",
+      "scale": {"range": ["#0077c8", "#f5a623"]},
+      "title": "Fuente"
+    },
+    "tooltip": [
+      {"field": "anio", "title": "Año"},
+      {"field": "Fuente", "title": "Fuente"},
+      {
+        "field": "Monto",
+        "type": "quantitative",
+        "title": "Monto",
+        "format": ",.0f"
+      }
+    ],
+    "xOffset": {"field": "Fuente"}
+  },
+  "title": "Ingresos anuales: Subsecretaría vs IND",
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
