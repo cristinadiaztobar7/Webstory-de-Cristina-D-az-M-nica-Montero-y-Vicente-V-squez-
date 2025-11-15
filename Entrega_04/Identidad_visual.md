@@ -178,4 +178,5 @@ Construyen una narrativa en la cual el usuario “avanza de prueba en prueba”.
 ---
 
 ## 2.2 Wireframes del prototipo
+https://github.com/cristinadiaztobar7/Webstory-de-Cristina-D-az-M-nica-Montero-y-Vicente-V-squez-/blob/main/Entrega_04/WIREFRAME_PROTOTIPO.pdf
 
