@@ -38,6 +38,7 @@ El moodboard reúne imágenes cenitales de:
 ---
 
 ## 1.3 Logo de la webstory
+https://github.com/cristinadiaztobar7/Webstory-de-Cristina-D-az-M-nica-Montero-y-Vicente-V-squez-/blob/main/Entrega_04/BOLD%20(1).png
 
 **Concepto sugerido del logo:**
 
