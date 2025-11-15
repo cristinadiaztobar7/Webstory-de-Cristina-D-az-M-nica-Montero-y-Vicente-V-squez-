@@ -47,8 +47,6 @@ https://github.com/cristinadiaztobar7/Webstory-de-Cristina-D-az-M-nica-Montero-y
 - Tipografía deportiva sans serif (Montserrat).
 - Nombre tentativo: **“Pistas del Rendimiento”.**
 
-*(Cuando esté listo, insertar PNG aquí)*
-
 ---
 
 ## 1.4 Paleta de colores (con usos y porcentajes)
@@ -163,9 +161,10 @@ La paleta responde a elementos reales:
 - blanco → marcas deportivas oficiales  
 - arena → foso  
 - verde → zonas de descanso/entorno  
-- naranja → señalética  
+- naranja y amarillo → señalética
+  
 
-Esto permite una narrativa inmersiva y clara.
+Esto permite una narrativa clara.
 
 ### Justificación de tipografías
 - **Montserrat** transmite fuerza, profesión y dinamismo.  
@@ -174,11 +173,9 @@ Esto permite una narrativa inmersiva y clara.
 
 ### Justificación de recursos gráficos
 Los separadores temáticos replican zonas reales del estadio (fosos, colchonetas, áreas de lanzamiento).  
-Construyen una narrativa concreta: el usuario “avanza de prueba en prueba”.
+Construyen una narrativa en la cual el usuario “avanza de prueba en prueba”.
 
 ---
 
 ## 2.2 Wireframes del prototipo
-
-### Link al prototipo (Miro)
 
