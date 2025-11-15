@@ -56,17 +56,18 @@ El moodboard reúne imágenes cenitales de:
 
 | Color | HEX | Uso | % |
 |------|------|------|------|
-| Rojo pista | `#A42121` | Fondo general / tartán | 45% |
+| Rojo pista | `#632222` | Fondo general / tartán | 45% |
 | Blanco tiza | `#FFFFFF` | Líneas, textos y marcas | 20% |
 | Negro pista húmeda | `#1A1A1A` | Texto principal | 15% |
 
-### 🎨 Paleta secundaria (espacios del estadio)
+### Paleta secundaria (espacios del estadio)
 
 | Color | HEX | Uso | % |
 |------|------|------|------|
 | Arena foso | `#E5AC3F` | Separadores de secciones | 10% |
-| Verde pasto | `#2B6129` | Encabezados, énfasis | 5% |
-| Naranja cono | `#FF7817` | Iconos y callouts | 5% |
+| Verde pasto | `##3E5330` | Encabezados, énfasis | 5% |
+| Naranja cono | `##fC8611` | Iconos y callouts | 5% |
+| Amarillo cono | `#FAFF00` | marcas | 5% |
 
 **Justificación:**  
 Los colores provienen directamente de los materiales reales usados en atletismo (tartán, tiza, pasto, arena, conos).  
