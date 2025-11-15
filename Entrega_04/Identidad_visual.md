@@ -21,7 +21,7 @@ El estilo busca una experiencia inmersiva, narrativa y completamente coherente c
 ---
 
 ## 1.2 Moodboard  
-*(Insertar imagen o link en GitHub)*
+
 
 El moodboard reúne imágenes cenitales de:
 
