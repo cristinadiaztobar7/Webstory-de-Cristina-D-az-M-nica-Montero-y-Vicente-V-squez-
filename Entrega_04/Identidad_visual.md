@@ -21,7 +21,7 @@ El estilo busca una experiencia inmersiva, narrativa y completamente coherente c
 ---
 
 ## 1.2 Moodboard  
-*(Insertar imagen o link en GitHub)*
+
 
 El moodboard reúne imágenes cenitales de:
 
@@ -38,6 +38,7 @@ El moodboard reúne imágenes cenitales de:
 ---
 
 ## 1.3 Logo de la webstory
+https://github.com/cristinadiaztobar7/Webstory-de-Cristina-D-az-M-nica-Montero-y-Vicente-V-squez-/blob/main/Entrega_04/BOLD%20(1).png
 
 **Concepto sugerido del logo:**
 
@@ -45,8 +46,6 @@ El moodboard reúne imágenes cenitales de:
 - Flechas o curvas para indicar progreso.
 - Tipografía deportiva sans serif (Montserrat).
 - Nombre tentativo: **“Pistas del Rendimiento”.**
-
-*(Cuando esté listo, insertar PNG aquí)*
 
 ---
 
@@ -56,17 +55,18 @@ El moodboard reúne imágenes cenitales de:
 
 | Color | HEX | Uso | % |
 |------|------|------|------|
-| Rojo pista | `#A42121` | Fondo general / tartán | 45% |
+| Rojo pista | `#632222` | Fondo general / tartán | 45% |
 | Blanco tiza | `#FFFFFF` | Líneas, textos y marcas | 20% |
 | Negro pista húmeda | `#1A1A1A` | Texto principal | 15% |
 
-### 🎨 Paleta secundaria (espacios del estadio)
+### Paleta secundaria (espacios del estadio)
 
 | Color | HEX | Uso | % |
 |------|------|------|------|
 | Arena foso | `#E5AC3F` | Separadores de secciones | 10% |
-| Verde pasto | `#2B6129` | Encabezados, énfasis | 5% |
-| Naranja cono | `#FF7817` | Iconos y callouts | 5% |
+| Verde pasto | `##3E5330` | Encabezados, énfasis | 5% |
+| Naranja cono | `##fC8611` | Iconos y callouts | 5% |
+| Amarillo cono | `#FAFF00` | marcas | 5% |
 
 **Justificación:**  
 Los colores provienen directamente de los materiales reales usados en atletismo (tartán, tiza, pasto, arena, conos).  
@@ -161,9 +161,10 @@ La paleta responde a elementos reales:
 - blanco → marcas deportivas oficiales  
 - arena → foso  
 - verde → zonas de descanso/entorno  
-- naranja → señalética  
+- naranja y amarillo → señalética
+  
 
-Esto permite una narrativa inmersiva y clara.
+Esto permite una narrativa clara.
 
 ### Justificación de tipografías
 - **Montserrat** transmite fuerza, profesión y dinamismo.  
@@ -172,11 +173,10 @@ Esto permite una narrativa inmersiva y clara.
 
 ### Justificación de recursos gráficos
 Los separadores temáticos replican zonas reales del estadio (fosos, colchonetas, áreas de lanzamiento).  
-Construyen una narrativa concreta: el usuario “avanza de prueba en prueba”.
+Construyen una narrativa en la cual el usuario “avanza de prueba en prueba”.
 
 ---
 
 ## 2.2 Wireframes del prototipo
-
-### Link al prototipo (Miro)
+https://github.com/cristinadiaztobar7/Webstory-de-Cristina-D-az-M-nica-Montero-y-Vicente-V-squez-/blob/main/Entrega_04/WIREFRAME_PROTOTIPO.pdf
 
