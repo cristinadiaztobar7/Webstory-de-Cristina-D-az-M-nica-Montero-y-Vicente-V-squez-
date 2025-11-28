@@ -1,25 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 body {
-    background-color: #632222; /* TU COLOR DE FONDO */
-    font-family: Arial, sans-serif;
+    /* 1. Establecemos el color base vino (por si acaso) */
+    background-color: #632222;
     
-    /* Esto centra la caja blanca en medio de la pantalla */
+   /* 1. Limpiamos el body para que solo tenga el color vino */
+body {
+    background-color: #632222;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    
+    /* Esto es importante para centrar tu tarjeta sobre la pista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que aparezcan barras de desplazamiento */
+}
+
+/* 2. El contenedor de la pista (se va al fondo) */
+.pista-atletica {
+    position: fixed; /* Se queda fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Dividimos el ancho en columnas */
+    display: flex; 
+    z-index: -1; /* ¡TRUCO! Esto lo manda DETRÁS de todo (al fondo) */
+}
+
+/* 3. Cada carril individual */
+.carril {
+    /* --- ¡ESTA ES LA LÍNEA MÁGICA QUE FALTA! --- */
+    position: relative;
+    flex: 1; /* Todos los carriles ocupan el mismo ancho */
+    border-right: 4px solid rgba(255, 255, 255, 0.8); /* Línea tipo tiza */
+    
+    /* Estilo de los números */
+    color: rgba(255, 255, 255, 0.4); /* Blanco medio transparente (pintura de suelo) */
+    font-family: 'Montserrat', sans-serif; /* Usamos tu fuente bonita */
+    font-size: 80px; /* Números grandes */
+    font-weight: bold;
+    text-align: center; /* Número centrado en el carril */
+    padding-top: 20px; /* Separación desde el techo */
+}
+
+/* Quitamos la línea del último carril para que no se vea feo el borde derecho */
+.carril:last-child {
+    border-right: none;
+}
+
+/* 4. Aseguramos que tu tarjeta blanca esté por encima */
+.contenedor {
+    position: relative;
+    z-index: 10; /* Esto asegura que la tarjeta flote ENCIMA de la pista */
+    /* ... el resto de tu estilo del contenedor sigue igual ... */
+}
+    
+    /* 3. El resto de tu configuración para centrar la caja */
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    /* Asegura que el fondo cubra todo incluso si haces scroll */
+    background-attachment: fixed; 
 }
 
 /* 2. La caja blanca central */
+
 .contenedor {
-    background-color: white; /* Fondo blanco para leer bien el texto */
-    padding: 50px;
-    border-radius: 15px; /* Bordes redondeados */
-    text-align: center;
+    /* --- ESTO ES LO NUEVO: FUERZA EL ORDEN VERTICAL --- */
+    display: flex;             /* Activa el modo flexible */
+    flex-direction: column;    /* Ordena los elementos en columna (hacia abajo) */
+    align-items: center;       /* Centra todo horizontalmente */
     
-    /* Sombra oscura para que la caja "flote" sobre el fondo rojo */
+    /* --- ESTO ES LO QUE YA TENÍAS --- */
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
     max-width: 400px;
 }
@@ -74,4 +137,176 @@ hr.separador {
     margin-bottom: 20px;       /* Espacio debajo de la línea */
     border-radius: 2px;        /* Bordes redondeados para que se vea suave */
     width: 100%;               /* Que ocupe todo el ancho disponible */
+}
+/* =========================================
+   DISEÑO DEL CORREDOR GIGANTE (Escala x4)
+========================================= */
+
+/* 1. El Torso (La espalda) */
+.corredor {
+    position: absolute;
+    bottom: -20%; /* Ajustado para que se esconda bien al salir */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* --- MEDIDAS MULTIPLICADAS POR 4 --- */
+    width: 80px;          /* Antes 20px */
+    height: 56px;         /* Antes 14px */
+    border-radius: 25px;  /* Redondeado proporcional */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Sombra más grande */
+    
+    animation: carrera linear infinite;
+    z-index: 2; 
+}
+
+/* 2. La Cabeza */
+.corredor::after {
+    content: '';
+    position: absolute;
+    
+    /* Ajuste de posición para el nuevo tamaño */
+    top: -35px;         
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* --- MEDIDAS MULTIPLICADAS POR 4 --- */
+    width: 45px;        /* Antes 11px */
+    height: 45px;
+    
+    background-color: #fdd5b1;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+/* 3. Los Brazos (Barra de braceo) */
+.corredor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* --- MEDIDAS MULTIPLICADAS POR 4 --- */
+    width: 130px;       /* Antes 32px (Brazos muy largos) */
+    height: 32px;       /* Antes 8px (Brazos gruesos) */
+    
+    background-color: inherit; 
+    border-radius: 16px; 
+    
+    z-index: 1; 
+    
+    /* Mantenemos la misma animación de braceo */
+    animation: braceo 0.5s ease-in-out infinite alternate; /* Un poco más lento por el peso */
+}
+
+/* 4. Ajuste de la Animación de Carrera */
+@keyframes carrera {
+    from { bottom: -30%; } /* Empieza más abajo porque son más grandes */
+    to   { bottom: 130%; } /* Termina más arriba */
+}
+
+/* La animación de braceo se mantiene igual */
+@keyframes braceo {
+    0%   { transform: translate(-50%, -50%) rotate(20deg); }
+    100% { transform: translate(-50%, -50%) rotate(-20deg); }
+}
+
+
+/* =========================================
+   LAS ANIMACIONES
+========================================= */
+
+/* Animación 1: El desplazamiento por la pista (Igual que antes) */
+@keyframes carrera {
+    from { bottom: -15%; }
+    to   { bottom: 115%; }
+}
+
+/* --- ¡NUEVA ANIMACIÓN! --- */
+/* Animación 2: El braceo (Rotación rápida de la barra de brazos) */
+@keyframes braceo {
+    /* Empieza rotado hacia un lado */
+    0% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+    /* Termina rotado hacia el otro lado */
+    100% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+}
+
+
+/* =========================================
+   PERSONALIZACIÓN DE CORREDORES (Sin cambios)
+========================================= */
+/* NOTA: Mantenemos los mismos colores y velocidades que ya tenías */
+
+.c1 { background-color: #ff3333; animation-duration: 4s; animation-delay: -1s; }
+.c2 { background-color: #3366ff; animation-duration: 5.5s; animation-delay: -3s; }
+.c3 { background-color: #ffcc00; animation-duration: 7s; animation-delay: -0.5s; }
+.c4 { background-color: #33cc33; animation-duration: 5s; animation-delay: -2s; }
+.c5 { background-color: #ff6600; animation-duration: 6s; animation-delay: -4s; }
+.c6 { background-color: #e0e0e0; animation-duration: 4.5s; animation-delay: -1.5s; }
+
+
+/* =========================================
+   LA ANIMACIÓN DE LA CARRERA
+========================================= */
+/* Definimos el movimiento de abajo hacia arriba */
+@keyframes carrera {
+    from {
+        bottom: -10%; /* Empieza fuera de la pantalla (abajo) */
+    }
+    to {
+        bottom: 110%; /* Termina fuera de la pantalla (arriba) */
+    }
+}
+
+
+/* =========================================
+   PERSONALIZACIÓN DE CADA CORREDOR
+   (Colores, Velocidades y Posiciones)
+========================================= */
+
+/* --- Corredor 1 (Rojo - El más rápido) --- */
+.c1 {
+    background-color: #ff3333; /* Camiseta Roja */
+    animation-duration: 4s; /* Tarda 4 segundos en cruzar */
+    animation-delay: -1s; /* El delay negativo hace que empiece "ya corriendo" */
+}
+
+/* --- Corredor 2 (Azul - Velocidad media, va líder) --- */
+.c2 {
+    background-color: #3366ff; /* Azul */
+    animation-duration: 5.5s;
+    animation-delay: -3s; /* Empieza muy adelantado */
+}
+
+/* --- Corredor 3 (Amarillo - El rezagado) --- */
+.c3 {
+    background-color: #ffcc00; /* Amarillo */
+    animation-duration: 7s; /* Muy lento */
+    animation-delay: -0.5s; /* Acaba de empezar */
+}
+
+/* --- Corredor 4 (Verde - Buen ritmo) --- */
+.c4 {
+    background-color: #33cc33; /* Verde */
+    animation-duration: 5s;
+    animation-delay: -2s;
+}
+
+/* --- Corredor 5 (Naranja) --- */
+.c5 {
+    background-color: #ff6600; /* Naranja */
+    animation-duration: 6s;
+    animation-delay: -4s;
+}
+
+/* --- Corredor 6 (Blanco/Gris) --- */
+.c6 {
+    background-color: #e0e0e0; /* Gris claro */
+    animation-duration: 4.5s;
+    animation-delay: -1.5s;
 }
