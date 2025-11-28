@@ -1,4 +1,5 @@
-/* 1. Estilos generales de la página */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 body {
     background-color: #632222; /* TU COLOR DE FONDO */
     font-family: Arial, sans-serif;
@@ -38,17 +39,39 @@ p {
 
 /* 5. Estilo del Botón */
 button {
-    background-color: #632222; /* Botón del mismo color del fondo */
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
+    /* Fondo Naranja (puedes cambiarlo a 'white' si prefieres) */
+    background-color: #ff8c00; 
+    
+    /* Texto */
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /* Esto es SemiBold */
     font-size: 16px;
+    
+    /* Bordes y Esquinas */
+    border: 2px solid white;
+    border-radius: 8px;
+    
+    /* Espaciado */
+    padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Suaviza el cambio de color */
+    
+    /* Suaviza la animación del tamaño */
+    transition: transform 0.2s ease, background-color 0.3s;
 }
 
-/* Efecto al pasar el mouse por encima del botón */
+/* Hover: Ligero aumento de tamaño */
 button:hover {
-    background-color: #8a3636; /* Un rojo un poco más claro */
+    transform: scale(1.1); /* Aumenta un 10% el tamaño */
+    background-color: #e07b00; /* Un naranja un poco más oscuro al pasar el mouse */
+}
+/* Estilo del separador */
+hr.separador {
+    background-color: #E5AC3F; /* Tu color mostaza */
+    height: 4px;               /* Grosor de la línea */
+    border: none;              /* Quitamos el borde gris por defecto */
+    margin-top: 30px;          /* Espacio entre el botón y la línea */
+    margin-bottom: 20px;       /* Espacio debajo de la línea */
+    border-radius: 2px;        /* Bordes redondeados para que se vea suave */
+    width: 100%;               /* Que ocupe todo el ancho disponible */
 }
