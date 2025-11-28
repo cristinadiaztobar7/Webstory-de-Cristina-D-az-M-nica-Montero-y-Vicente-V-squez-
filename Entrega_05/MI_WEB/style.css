@@ -1,34 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600;700&display=swap');
+
+/* TITULARES (H1, H2, H3) -> Montserrat Bold */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* 700 es "Bold" */
+    color: #632222;   /* Tu color vino para los títulos */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+/* TEXTO NORMAL (Párrafos) -> Inter Regular */
+p, li, span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* 400 es "Regular" */
+    color: #333;      /* Gris oscuro para leer bien */
+    line-height: 1.6; /* Altura de línea para que no se vea apretado */
+    font-size: 16px;  /* Tamaño legible */
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
 
 body {
-    /* 1. Establecemos el color base vino (por si acaso) */
     background-color: #632222;
+    /* ... (tus otras configuraciones de fuente y color) ... */
     
-   /* 1. Limpiamos el body para que solo tenga el color vino */
-body {
-    background-color: #632222;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    height: 100vh;
+    /* ANTES tenías: height: 100vh; */
+    /* AHORA pon esto: */
+    min-height: 100vh; /* Permite que la página crezca si hay mucho texto */
     
-    /* Esto es importante para centrar tu tarjeta sobre la pista */
+    /* ANTES tenías: overflow: hidden; */
+    /* AHORA pon esto: */
+    overflow-y: auto;  /* Activa la barra de scroll vertical si es necesaria */
+    
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Evita que aparezcan barras de desplazamiento */
+    /* justifyContent: center;  <--- BORRA O COMENTA ESTA LÍNEA */
+    /* Si dejamos justify-content, te seguirá cortando el principio del texto */
+    
+    align-items: flex-start; /* Alineamos todo arriba para que empiece bien */
+    
+    margin: 0;
 }
 
 /* 2. El contenedor de la pista (se va al fondo) */
 .pista-atletica {
-    position: fixed; /* Se queda fijo en la pantalla */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Dividimos el ancho en columnas */
-    display: flex; 
-    z-index: -1; /* ¡TRUCO! Esto lo manda DETRÁS de todo (al fondo) */
+    position: fixed; /* Esto ya debería estar así, pero confírmalo */
+    /* ... resto del código ... */
 }
 
 /* 3. Cada carril individual */
@@ -54,20 +68,15 @@ body {
 
 /* 4. Aseguramos que tu tarjeta blanca esté por encima */
 .contenedor {
-    position: relative;
-    z-index: 10; /* Esto asegura que la tarjeta flote ENCIMA de la pista */
-    /* ... el resto de tu estilo del contenedor sigue igual ... */
-}
+    /* ... (tu código anterior: fondo blanco, padding, etc) ... */
     
-    /* 3. El resto de tu configuración para centrar la caja */
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    /* Asegura que el fondo cubra todo incluso si haces scroll */
-    background-attachment: fixed; 
+    /* Agrega estas líneas para el margen */
+    margin-top: 50px;    /* Espacio arriba */
+    margin-bottom: 50px; /* Espacio abajo para poder hacer scroll hasta el final */
+    
+    /* Para asegurar que quede centrado horizontalmente si el body cambió */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 2. La caja blanca central */
