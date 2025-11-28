@@ -1,0 +1,54 @@
+/* 1. Estilos generales de la página */
+body {
+    background-color: #632222; /* TU COLOR DE FONDO */
+    font-family: Arial, sans-serif;
+    
+    /* Esto centra la caja blanca en medio de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 2. La caja blanca central */
+.contenedor {
+    background-color: white; /* Fondo blanco para leer bien el texto */
+    padding: 50px;
+    border-radius: 15px; /* Bordes redondeados */
+    text-align: center;
+    
+    /* Sombra oscura para que la caja "flote" sobre el fondo rojo */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    max-width: 400px;
+}
+
+/* 3. Estilo del Título */
+h1 {
+    color: #632222; /* Usamos tu rojo también en el texto del título */
+    margin-bottom: 10px;
+}
+
+/* 4. Estilo del Párrafo */
+p {
+    color: #333; /* Gris oscuro para lectura fácil */
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* 5. Estilo del Botón */
+button {
+    background-color: #632222; /* Botón del mismo color del fondo */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+button:hover {
+    background-color: #8a3636; /* Un rojo un poco más claro */
+}

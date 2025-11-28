@@ -8,7 +8,7 @@ Los datos acompañan la intuición. Si uno pone en una misma línea el presupues
 
 Sin embargo, no basta con poner más plata para ver mejores resultados. Hay todo un trabajo de reloj detrás de cada una de las medallas y resultados de cada deportista. Desde el apoyo del gobierno hasta el familiar, cada ámbito el vital. Pero el 2023 dejó una pista concreta: cuando el Estado invierte, el atletismo chileno deja de ir a participar y empieza a pelear. 
 
-Lo que dicen tus datos 
+Lo que dicen los datos 
 
 Presupuesto deporte: salto notorio en 2023 (aprox. $494 mil millones)
 Becas PRODDAR: flujo anual activo en 2023 (aprox. $26,6 millones).
