@@ -29,15 +29,26 @@ p, li, span {
 /* =========================================
    2. CONFIGURACIÓN GENERAL (PORTADA)
 ========================================= */
+/* ÚSALO SOLO SI DESCARGASTE UNA IMAGEN */
 body {
     background-color: #632222;
+    
+    /* Aquí cargas tu imagen real */
+    background-image: url('textura.jpg'); 
+    
+    /* Esto oscurece un poco la foto para que el texto resalte */
+    background-blend-mode: multiply; 
+    
+    background-size: 300px; /* Ajusta este tamaño para que el grano se vea bien */
+    background-repeat: repeat; /* Repite la textura */
+    
     font-family: 'Inter', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -236,3 +247,338 @@ hr.separador {
 .c4 { background-color: #33cc33; animation-duration: 5s; animation-delay: -2s; }
 .c5 { background-color: #ff6600; animation-duration: 6s; animation-delay: -4s; }
 .c6 { background-color: #e0e0e0; animation-duration: 4.5s; animation-delay: -1.5s; }
+
+/* =========================================
+   NUEVA ESTRUCTURA: TEXTO CENTRADO + IMAGEN FLOTANTE
+========================================= */
+
+/* 1. El Padre: Define el área de juego */
+.contenedor-historia {
+    position: relative;         /* Vital: es la referencia para "atrapar" la imagen */
+    width: 100%;
+    max-width: 1400px;          /* Permitimos que sea ancho para que la foto quepa lejos */
+    margin: 50px auto;          /* Centra el contenedor en la pantalla */
+    display: flex;
+    justify-content: center;    /* Esto asegura que la CAJA BLANCA quede al medio */
+    padding: 0 20px;
+    z-index: 10;
+}
+
+/* 2. El Texto: Se queda quieto en el centro */
+.caja-blanca {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    
+    width: 100%;               
+    max-width: 600px;           /* Le damos un ancho máximo estricto para que se vea elegante */
+    
+    position: relative;         /* Para asegurar que quede sobre pistas u otros elementos */
+    z-index: 2;
+}
+
+.caja-blanca h2 { text-align: center; }
+
+/* 3. La Imagen: La enviamos a la derecha usando posición absoluta */
+.columna-imagen {
+    position: absolute;
+    right: 20px;               /* Posición final */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 300px;
+    text-align: center;
+    z-index: 1;
+
+    /* --- ESTA ES LA LÍNEA NUEVA --- */
+    /* Nombre de la animación | Duración | Estilo de movimiento | Retraso (opcional) */
+    animation: entradaDesdeDerecha 1.5s ease-out 0.5s backwards;
+}
+
+/* Estilos visuales de la foto */
+.columna-imagen img {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform: rotate(3deg);    /* Un leve giro */
+}
+
+.desc-foto {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* 4. PRECAUCIÓN PARA PANTALLAS CHICAS (Notebooks pequeños o Tablets) */
+/* Si la pantalla es menor a 1200px, la foto podría tapar el texto. 
+   Aquí le decimos que si la pantalla se achica, vuelva a ponerse abajo. */
+@media (max-width: 1200px) {
+    .contenedor-historia {
+        flex-direction: column; /* Vuelve a ponerlos en columna */
+        align-items: center;
+    }
+    
+    .columna-imagen {
+        position: static;       /* Deja de flotar */
+        transform: none;        /* Quita la corrección vertical */
+        margin-top: 40px;       /* Espacio arriba */
+        right: auto;            /* Resetea la posición derecha */
+    }
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+@keyframes entradaDesdeDerecha {
+    /* Estado inicial (0%): Invisible y desplazado a la derecha */
+    from {
+        opacity: 0;        /* Totalmente transparente */
+        right: -50px;      /* Empieza 50px más a la derecha (fuera de su sitio) */
+    }
+    /* Estado final (100%): Visible y en su sitio */
+    to {
+        opacity: 1;        /* Totalmente visible */
+        right: 20px;       /* Termina en la posición original que definimos antes */
+    }
+}
+
+/* =========================================
+   ESTILOS PARA EL GRÁFICO INTERACTIVO
+========================================= */
+
+.contenedor-grafico-principal {
+    width: 100%;
+    max-width: 1000px;       /* Ancho máximo */
+    margin: 100px auto;      /* Mucho espacio arriba y abajo para separar */
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.titulo-grafico h2 {
+    color: white;            /* Título en blanco */
+    font-size: 2rem;         /* Letra grande e impactante */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para leerse bien sobre el rojo */
+    margin-bottom: 10px;
+}
+
+.titulo-grafico p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* El marco blanco que contiene el gráfico */
+.marco-grafico {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Sombra intensa (efecto flotante) */
+    overflow: hidden;        /* Para que nada se salga de los bordes redondeados */
+}
+
+/* La ventana mágica (iframe) */
+.marco-grafico iframe {
+    width: 100%;
+    height: 500px;           /* Altura suficiente para ver todo el gráfico */
+    border: none;            /* Sin bordes feos */
+    display: block;
+}
+
+/* =========================================
+   ELEMENTOS DECORATIVOS DE FONDO
+========================================= */
+
+.icono-fondo {
+    position: absolute;    /* Para poder moverlos libremente */
+    opacity: 0.1;          /* MUY transparentes (10%) para que no molesten */
+    fill: white;           /* Color blanco */
+    z-index: 1;            /* Por encima de la pista (0) pero detrás del texto (10) */
+    pointer-events: none;  /* Para que no interfieran con clics */
+    animation: flotar 6s ease-in-out infinite;
+}
+
+/* Animación para que parezca que respiran/flotan */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Posiciones específicas para cada adorno */
+/* Ajusta los porcentajes 'top', 'left', 'right' a tu gusto */
+
+.deco-1 {
+    width: 200px;
+    top: 10%;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+.deco-2 {
+    width: 150px;
+    bottom: 15%;
+    right: 5%;
+    transform: rotate(10deg);
+    animation-delay: 1s; /* Para que no se muevan todos igual */
+}
+
+.deco-3 {
+    width: 180px;
+    top: 40%;
+    left: 5%;
+    transform: rotate(-5deg);
+    animation-delay: 2s;
+}
+
+/* =========================================
+   SECCIÓN DE CONCLUSIONES (El arreglo)
+========================================= */
+
+.caja-conclusiones {
+    background-color: white;    /* <--- Esto es lo que faltaba */
+    padding: 60px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-bottom: 6px solid #E5AC3F;
+}
+
+.caja-conclusiones h2 {
+    color: #632222;
+    margin-bottom: 20px;
+}
+
+.caja-conclusiones strong {
+    color: #632222;
+    font-weight: 700;
+}
+
+.texto-destacado {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 30px;
+}
+
+/* =========================================
+   NÚMEROS DE CARRIL
+========================================= */
+
+.numero-carril {
+    position: absolute;
+    top: 50px;              /* Distancia desde el techo de la página */
+    transform: translateX(-50%) scaleY(1.5); /* Centrados y "alargados" verticalmente */
+    
+    color: rgba(255, 255, 255, 0.5); /* Blanco semitransparente (efecto pintura vieja) */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;       /* Negrita */
+    font-size: 3rem;        /* Tamaño grande */
+    line-height: 1;
+    z-index: 1;             /* Encima del suelo */
+    pointer-events: none;   /* Para que no molesten al clic */
+}
+
+/* =========================================
+   ESTILO MIXTO: GRÁFICO CENTRADO + IMAGEN FLOTANTE IZQ
+========================================= */
+
+/* 1. El Padre: Define el escenario */
+.contenedor-mixto {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;     /* Centra el gráfico */
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+/* 2. La Columna de Fotos (Izquierda) - CORREGIDO PARA 2 FOTOS */
+.columna-imagen-izq.posicion-relativa {
+    position: absolute;
+    
+    /* Ajuste de posición: Un poco más a la izquierda para no tapar */
+    left: -120px;                
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 280px;
+    z-index: 2;
+
+    /* --- AQUÍ ESTÁ EL ARREGLO --- */
+    display: flex;
+    flex-direction: column;      /* Ordena las fotos verticalmente (columna) */
+    gap: 40px;                   /* Espacio entre la foto de arriba y la de abajo */
+}
+
+/* Estilo base para las imágenes dentro de esta columna */
+.columna-imagen-izq.posicion-relativa img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border: 3px solid white;
+    
+    /* La primera foto gira un poco a la izquierda */
+    transform: rotate(-3deg); 
+}
+
+/* Estilo específico para la SEGUNDA foto (Martina) */
+/* Usamos el div que la envuelve o la imagen directa si usaste la clase */
+.bloque-foto-2 img {
+    transform: rotate(3deg) !important; /* Gira a la derecha para contrastar */
+}
+
+/* Estilo para que las descripciones se lean bien sobre el rojo */
+.desc-foto {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* 3. El Gráfico (EL PROTAGONISTA) */
+.zona-grafico {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. RESPONSIVE: Móvil (Pantallas chicas) */
+@media (max-width: 1300px) {
+    .contenedor-mixto {
+        flex-direction: column;
+    }
+    
+    .columna-imagen-izq.posicion-relativa {
+        position: static;        /* Deja de flotar */
+        transform: none;
+        margin-bottom: 40px;
+        width: 100%;
+        max-width: 400px;
+        left: auto;
+    }
+    
+    .columna-imagen-izq.posicion-relativa img,
+    .bloque-foto-2 img {
+        transform: rotate(0deg) !important; /* Enderezamos las fotos en móvil */
+    }
+}
