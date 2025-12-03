@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": "transparent"}}, "data": {"name": "data-602ba591740aaabda2e8996e99699eae"}, "mark": {"type": "bar", "cornerRadiusEnd": 3}, "encoding": {"color": {"field": "gender", "scale": {"domain": ["Hombres", "Mujeres"], "range": ["#00469b", "#A42121"]}, "title": "G\u00e9nero", "type": "nominal"}, "tooltip": [{"field": "year", "title": "A\u00f1o", "type": "quantitative"}, {"field": "gender", "title": "G\u00e9nero", "type": "nominal"}, {"field": "count", "title": "Atletas", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Juegos Panamericanos", "type": "ordinal"}, "xOffset": {"field": "gender", "type": "nominal"}, "y": {"field": "count", "title": "N\u00b0 de Atletas (N\u00f3mina Oficial)", "type": "quantitative"}}, "height": 400, "title": "Evoluci\u00f3n de la Participaci\u00f3n Chilena en Atletismo (1951-2023)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-602ba591740aaabda2e8996e99699eae": [{"year": 1951, "gender": "Hombres", "count": 15}, {"year": 1951, "gender": "Mujeres", "count": 4}, {"year": 1955, "gender": "Hombres", "count": 12}, {"year": 1955, "gender": "Mujeres", "count": 5}, {"year": 1959, "gender": "Hombres", "count": 18}, {"year": 1959, "gender": "Mujeres", "count": 7}, {"year": 1963, "gender": "Hombres", "count": 8}, {"year": 1963, "gender": "Mujeres", "count": 3}, {"year": 1967, "gender": "Hombres", "count": 10}, {"year": 1967, "gender": "Mujeres", "count": 4}, {"year": 1971, "gender": "Hombres", "count": 12}, {"year": 1971, "gender": "Mujeres", "count": 6}, {"year": 1975, "gender": "Hombres", "count": 8}, {"year": 1975, "gender": "Mujeres", "count": 3}, {"year": 1979, "gender": "Hombres", "count": 11}, {"year": 1979, "gender": "Mujeres", "count": 4}, {"year": 1983, "gender": "Hombres", "count": 9}, {"year": 1983, "gender": "Mujeres", "count": 2}, {"year": 1987, "gender": "Hombres", "count": 10}, {"year": 1987, "gender": "Mujeres", "count": 3}, {"year": 1991, "gender": "Hombres", "count": 12}, {"year": 1991, "gender": "Mujeres", "count": 4}, {"year": 1995, "gender": "Hombres", "count": 10}, {"year": 1995, "gender": "Mujeres", "count": 7}, {"year": 1999, "gender": "Hombres", "count": 10}, {"year": 1999, "gender": "Mujeres", "count": 6}, {"year": 2003, "gender": "Hombres", "count": 12}, {"year": 2003, "gender": "Mujeres", "count": 8}, {"year": 2007, "gender": "Hombres", "count": 14}, {"year": 2007, "gender": "Mujeres", "count": 10}, {"year": 2011, "gender": "Hombres", "count": 18}, {"year": 2011, "gender": "Mujeres", "count": 14}, {"year": 2015, "gender": "Hombres", "count": 16}, {"year": 2015, "gender": "Mujeres", "count": 16}, {"year": 2019, "gender": "Hombres", "count": 15}, {"year": 2019, "gender": "Mujeres", "count": 13}, {"year": 2023, "gender": "Hombres", "count": 27}, {"year": 2023, "gender": "Mujeres", "count": 23}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

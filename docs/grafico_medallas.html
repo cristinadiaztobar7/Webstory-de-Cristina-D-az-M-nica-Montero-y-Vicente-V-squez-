@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-048a4199df20114ce3ce1fa51f549ce0"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Tipo", "scale": {"domain": ["Oro", "Plata", "Bronce"], "range": ["#FFD700", "#C0C0C0", "#CD7F32"]}, "type": "nominal"}, "tooltip": [{"field": "year", "type": "quantitative"}, {"field": "Tipo", "type": "nominal"}, {"field": "name", "type": "quantitative"}], "x": {"field": "year", "title": "A\u00f1o", "type": "ordinal"}, "y": {"field": "name", "title": "Cantidad", "type": "quantitative"}}, "height": 300, "title": "4. Medallero Hist\u00f3rico", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-048a4199df20114ce3ce1fa51f549ce0": [{"year": 1951, "Tipo": "Bronce", "name": 2}, {"year": 1951, "Tipo": "Oro", "name": 2}, {"year": 1951, "Tipo": "Plata", "name": 5}, {"year": 1955, "Tipo": "Bronce", "name": 5}, {"year": 1955, "Tipo": "Oro", "name": 2}, {"year": 1955, "Tipo": "Plata", "name": 1}, {"year": 1959, "Tipo": "Oro", "name": 1}, {"year": 1963, "Tipo": "Oro", "name": 1}, {"year": 1971, "Tipo": "Bronce", "name": 1}, {"year": 1983, "Tipo": "Oro", "name": 1}, {"year": 1987, "Tipo": "Bronce", "name": 1}, {"year": 1987, "Tipo": "Oro", "name": 1}, {"year": 1995, "Tipo": "Bronce", "name": 2}, {"year": 1999, "Tipo": "Bronce", "name": 1}, {"year": 2015, "Tipo": "Bronce", "name": 1}, {"year": 2019, "Tipo": "Bronce", "name": 1}, {"year": 2023, "Tipo": "Bronce", "name": 1}, {"year": 2023, "Tipo": "Oro", "name": 1}, {"year": 2023, "Tipo": "Plata", "name": 1}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
