@@ -67,7 +67,7 @@ body {
 ========================================= */
 .contenedor {
     background-color: white;
-    padding: 50px;
+    padding: 0px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
@@ -512,7 +512,7 @@ hr.separador {
     position: absolute;
     
     /* Ajuste de posición: Un poco más a la izquierda para no tapar */
-    left: -120px;                
+    left: 10px;                
     top: 50%;
     transform: translateY(-50%);
     
@@ -535,12 +535,6 @@ hr.separador {
     
     /* La primera foto gira un poco a la izquierda */
     transform: rotate(-3deg); 
-}
-
-/* Estilo específico para la SEGUNDA foto (Martina) */
-/* Usamos el div que la envuelve o la imagen directa si usaste la clase */
-.bloque-foto-2 img {
-    transform: rotate(3deg) !important; /* Gira a la derecha para contrastar */
 }
 
 /* Estilo para que las descripciones se lean bien sobre el rojo */
@@ -576,9 +570,649 @@ hr.separador {
         max-width: 400px;
         left: auto;
     }
+
+}
+
+/* =========================================
+   EFECTO FLIP (TARJETAS GIRATORIAS) - CORREGIDO
+========================================= */
+
+/* 1. El Contenedor de la Tarjeta */
+.tarjeta-contenedor {
+    background-color: transparent;
+    width: 250px;         /* Ancho fijo para que no se deforme */
+    height: 350px;        /* Altura fija: IMPORTANTE para que coincidan frente y dorso */
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 0 auto;       /* Centrado */
+}
+
+/* 2. El "Alma" de la tarjeta (lo que gira) */
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
     
-    .columna-imagen-izq.posicion-relativa img,
-    .bloque-foto-2 img {
-        transform: rotate(0deg) !important; /* Enderezamos las fotos en móvil */
+    /* La sombra va AQUÍ para que acompañe al giro */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-radius: 15px;
+}
+
+/* 3. Acción de Girar */
+.tarjeta-contenedor.girada .tarjeta-inner {
+    transform: rotateY(180deg);
+}
+
+/* 4. Configuración común para Frente y Dorso */
+.tarjeta-frente, .tarjeta-atras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la parte de atrás */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden; /* Asegura que nada se salga de los bordes */
+    border: 4px solid white; /* El borde va en la tarjeta, no en la foto */
+}
+
+/* 5. Estilo del FRENTE (La Foto) */
+.tarjeta-frente {
+    background-color: #632222; /* Color de fondo por si la foto no carga */
+}
+
+.tarjeta-frente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La foto llena la tarjeta perfectamente */
+    transform: none !important; /* IMPORTANTE: Quitamos el giro de la foto */
+    border: none;      /* Quitamos el borde de la foto (ya lo tiene la tarjeta) */
+    border-radius: 0;
+}
+
+/* Ajuste para el texto pequeño sobre la foto (nombre) */
+.tarjeta-frente .desc-foto {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(0,0,0,0.7); /* Fondo oscuro para leerse */
+    border-radius: 0;
+}
+
+/* 6. Estilo del DORSO (El Texto Oculto) */
+.tarjeta-atras {
+    background-color: white;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 4px solid #E5AC3F; /* Borde dorado distinto para atrás */
+}
+
+.tarjeta-atras h3 {
+    color: #632222;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.tarjeta-atras p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 7. ROTACIÓN DE LAS TARJETAS COMPLETAS */
+/* Aquí es donde inclinamos la tarjeta entera (frente y dorso juntos) */
+
+.bloque-foto-1 {
+    transform: rotate(-3deg); /* Lucas gira a la izquierda */
+}
+
+.bloque-foto-2 {
+    transform: rotate(3deg);  /* Isidora gira a la derecha */
+}
+
+/* =========================================
+   DESCANSO VISUAL: FOSO DE SALTO
+========================================= */
+
+.seccion-salto-visual {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto; /* Espacio vertical generoso */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+/* 1. La Pista antes del foso */
+.pista-aproximacion {
+    width: 60%;         /* Más angosta que el resto para enfocar la vista */
+    height: 100px;
+    background-color: #632222; /* Rojo pista */
+    position: relative;
+    border-left: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.5);
+}
+
+.linea-carril {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(255,255,255,0.5);
+    left: 50%; /* Línea central */
+}
+
+/* 2. La Tabla de Batida (El límite blanco) */
+.tabla-batida {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: white; /* Tabla blanca oficial */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* 3. El Foso de Arena */
+.foso-arena {
+    width: 80%;
+    height: 200px;
+    background-color: #e6c288; /* Color arena base */
+    
+    /* Truco de textura: Degradado + Ruido para parecer arena */
+    background-image: radial-gradient(circle, transparent 20%, #d1a666 80%),
+                      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+    
+    /* Sombra interna para dar profundidad (que parezca un hueco) */
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+    
+    border-radius: 0 0 10px 10px; /* Redondeado solo abajo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.texto-arena {
+    color: rgba(100, 70, 40, 0.4); /* Texto grabado en la arena */
+    font-weight: 800;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.3); /* Efecto relieve */
+}
+
+/* 4. El Placeholder del Gráfico */
+.contenedor-grafico-futuro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.placeholder-grafico {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    background-color: #f0f0f0; /* Gris claro */
+    border: 4px dashed #bbb;   /* Borde punteado de "aquí va algo" */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}
+
+.placeholder-grafico h3 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Contenedor para apilar cosas en el centro sin que floten a los lados */
+.contenedor-vertical-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+    padding-right: 15%; /* Dejamos espacio a la derecha para que se vea la pista */
+}
+
+/* =========================================
+   NUEVO DISEÑO: SALTO LARGO HORIZONTAL
+========================================= */
+
+.seccion-salto-horizontal {
+    display: flex; /* Pone los elementos lado a lado */
+    width: 100%;
+    max-width: 1200px;
+    height: 250px; /* Altura de la franja */
+    margin: 80px auto 40px auto; /* Márgenes arriba y abajo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    overflow: hidden; /* Para que nada se salga de las esquinas redondas */
+    position: relative;
+    z-index: 20;
+}
+
+/* A. PISTA DE IMPULSO (Izquierda) */
+.pista-impulso {
+    flex: 1; /* Ocupa 1 parte del espacio */
+    background-color: #632222; /* Rojo pista */
+    position: relative;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Para poner la flecha cerca de la tabla */
+}
+
+/* Líneas horizontales de la pista */
+.linea-carril-h {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.flecha-direccion {
+    color: rgba(255,255,255,0.2);
+    font-size: 4rem;
+    margin-right: 20px;
+}
+
+/* B. TABLA DE BATIDA (La línea blanca vertical) */
+.tabla-batida-vertical {
+    width: 25px; /* Ancho de la tabla */
+    background-color: white;
+    height: 100%;
+    box-shadow: inset 2px 0 5px rgba(0,0,0,0.1); /* Pequeña sombra interna */
+}
+
+/* C. EL FOSO DE ARENA (Derecha) */
+.foso-arena-largo {
+    flex: 2; /* Ocupa 2 partes (el doble que la pista) */
+    background-color: #e6c288; /* Color arena */
+    position: relative;
+    
+    /* Textura de arena realista */
+    background-image: 
+        radial-gradient(circle, transparent 20%, #d1a666 80%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+    
+    box-shadow: inset 10px 0 30px rgba(0,0,0,0.3); /* Sombra de profundidad desde la tabla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-arena-h {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: rgba(139, 69, 19, 0.15); /* Efecto "grabado" en la arena */
+    letter-spacing: 5px;
+}
+
+/* D. REGLA DE MEDICIÓN (Detalle lateral) */
+.regla-medicion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #333;
+    
+    /* Truco para crear las líneas de medición con CSS */
+    background-image: repeating-linear-gradient(
+        90deg,
+        white,
+        white 1px,
+        transparent 1px,
+        transparent 20px
+    );
+    opacity: 0.6;
+}
+
+/* Ajustes del contenedor del gráfico (para que quede centrado abajo) */
+.contenedor-grafico-futuro {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 100px auto; /* Margen abajo para separar del final */
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================
+   ARREGLO VERTICAL: FOSO ARRIBA, GRÁFICO ABAJO (CENTRADO PERFECTO)
+========================================= */
+
+/* =========================================
+   ARREGLO FINAL: FOSO Y CARTAS SALTO
+========================================= */
+
+/* 1. El contenedor que abraza cartas y gráfico */
+.contenedor-inferior-mixto {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;       /* Ancho total disponible */
+    display: flex;
+    justify-content: center; /* Centra el gráfico */
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+/* 2. Las Cartas Flotantes (Izquierda) */
+.columna-cartas-izq {
+    position: absolute;
+    left: 0;                 /* Pegadas al borde izquierdo del ancho 1400px */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    flex-direction: column;  /* Una debajo de otra */
+    gap: 40px;               /* Espacio vertical entre cartas */
+    width: 250px;            /* Ancho fijo de cartas */
+    z-index: 20;
+}
+
+/* 3. La Zona del Gráfico (Más angosta para dejar espacio) */
+.zona-grafico-inferior {
+    width: 100%;
+    max-width: 700px;        /* <--- CLAVE: Lo hacemos más angosto */
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 1200px) {
+    .contenedor-inferior-mixto {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .columna-cartas-izq {
+        position: static;    /* Dejan de flotar */
+        transform: none;
+        flex-direction: row; /* Se ponen lado a lado arriba */
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+    
+    .zona-grafico-inferior {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   DISEÑO SALTO ALTO HORIZONTAL
+========================================= */
+
+.seccion-salto-alto-horizontal {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: 250px;
+    margin: 80px auto 40px auto;
+    position: relative;
+    z-index: 20;
+}
+
+/* Zona de Carrera (Curva de aproximación) */
+.zona-carrera-curva {
+    flex: 1;
+    background-color: #632222; /* Rojo pista */
+    border-radius: 10px 0 0 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 4px solid white; /* Línea de zona */
+}
+
+.flecha-salto {
+    font-size: 5rem;
+    color: rgba(255,255,255,0.3);
+    transform: rotate(45deg);
+}
+
+/* Zona de Aterrizaje */
+.zona-colchoneta {
+    flex: 2;
+    background-color: #888; /* Piso de cemento/goma */
+    position: relative;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La Colchoneta Azul */
+.colchoneta-azul {
+    width: 80%;
+    height: 70%;
+    background-color: #2a6bbd; /* Azul clásico de colchoneta */
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    
+    /* Textura de malla */
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.1) 20px),
+                      repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.1) 20px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.texto-colchoneta {
+    color: rgba(255,255,255,0.3);
+    font-weight: 800;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* El Listón (La barra horizontal) */
+.liston-transversal {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 8px;
+    background: repeating-linear-gradient(45deg, #333, #333 10px, #f0c420 10px, #f0c420 20px); /* Rayado negro/amarillo */
+    top: 15%; /* Posición elevada */
+    z-index: 2;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+/* Los Parantes (Postes verticales) */
+.parante-izq, .parante-der {
+    position: absolute;
+    width: 6px;
+    height: 40%;
+    background-color: silver;
+    top: 5%;
+    z-index: 0;
+}
+.parante-izq { left: 5%; }
+.parante-der { right: 5%; }
+
+/* =========================================
+   DISEÑO GARROCHA + TEXTO + CARTAS (CORREGIDO)
+========================================= */
+
+/* 1. VISUAL DEL FOSO (GARROCHA) */
+.seccion-garrocha-horizontal {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: 250px;
+    margin: 80px auto 40px auto;
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pista-garrocha {
+    flex: 1;
+    background-color: #632222;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flecha-garrocha {
+    font-size: 3rem;
+    color: rgba(255,255,255,0.3);
+    margin-right: 10px;
+}
+
+.cajetin-pique {
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ddd, #fff, #ddd);
+    border-left: 2px solid #333;
+}
+
+.colchoneta-garrocha {
+    flex: 2;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.colchoneta-garrocha::after {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    background-color: #2a6bbd;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.texto-colchoneta {
+    position: relative;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: rgba(255,255,255,0.2);
+    font-size: 2rem;
+}
+
+.parantes-garrocha {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 5px;
+    height: 70%;
+    background-color: silver;
+    z-index: 5;
+    box-shadow: 2px 2px 5px black;
+}
+
+/* 2. EL CONTENEDOR MIXTO (Lado a Lado) */
+.contenedor-resistencia-mixto {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;           /* Ancho estándar */
+    margin: 50px auto;
+    
+    /* --- LA SOLUCIÓN: Flexbox estándar --- */
+    display: flex;               /* Pone los elementos en fila */
+    justify-content: center;     /* Centra el grupo entero */
+    align-items: center;         /* Alineación vertical */
+    gap: 60px;                   /* <--- ESPACIO DE SEGURIDAD (Nadie se toca) */
+    
+    padding: 0 20px;
+    z-index: 10;
+}
+
+/* 3. EL TEXTO CENTRAL */
+.zona-texto-central {
+    flex: 1;                     /* Ocupa el espacio disponible */
+    max-width: 600px;            /* Límite de ancho para lectura */
+}
+
+.caja-blanca-resistencia {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    text-align: left;
+    border-left: 6px solid #E5AC3F;
+}
+
+.caja-blanca-resistencia h3 {
+    color: #632222;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.cita-final {
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* 4. LAS CARTAS A LA DERECHA (Columna Sólida) */
+.columna-cartas-flotantes-der {
+    /* Quitamos 'absolute' para que ocupen su propio espacio físico */
+    position: relative;          
+    display: flex;
+    flex-direction: column;      /* Una debajo de la otra */
+    gap: 40px;
+    width: 250px;
+    flex-shrink: 0;              /* Evita que se aplasten */
+    z-index: 20;
+}
+
+/* RESPONSIVE: Notebooks y Tablets */
+@media (max-width: 1200px) {
+    .contenedor-resistencia-mixto {
+        flex-direction: column;  /* En pantallas chicas, uno abajo del otro */
+        gap: 40px;
+    }
+    
+    .columna-cartas-flotantes-der {
+        flex-direction: row;     /* Cartas lado a lado */
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .zona-texto-central {
+        max-width: 100%;
+    }
+}
+
+/* RESPONSIVE: Celulares */
+@media (max-width: 768px) {
+    .columna-cartas-flotantes-der {
+        flex-direction: column;  /* Cartas verticales en móvil */
     }
 }
