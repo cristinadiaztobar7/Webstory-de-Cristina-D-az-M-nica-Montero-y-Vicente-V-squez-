@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gráficos Atletismo Panamericano</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f9; padding: 20px; }
+    .chart-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 40px; }
+    h2 { color: #A42121; border-bottom: 2px solid #D8C29A; padding-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Visualización de Datos: Atletismo Chileno (1951-2023)</h1>
+
+  <div class="chart-container">
+    <h2>1. Evolución de la Participación (Hombres vs Mujeres)</h2>
+    <div id="vis1"></div>
+  </div>
+
+  <div class="chart-container">
+    <h2>2. Evolución de Marcas por Disciplina</h2>
+    <div id="vis2"></div>
+  </div>
+
+  <div class="chart-container">
+    <h2>3. Tasa de Variación en el Rendimiento (%)</h2>
+    <p>El 0% representa el promedio histórico. Valores positivos indican mejor rendimiento.</p>
+    <div id="vis3"></div>
+  </div>
+
+  <div class="chart-container">
+    <h2>4. Medallero Histórico (1951-2023)</h2>
+    <div id="vis4"></div>
+  </div>
+
+  <script type="text/javascript">
+    // DATOS PROCESADOS (Extraídos de tu CSV)
+    const dataParticipacion = [
+      {"year": 1951, "gender": "Men", "count": 15}, {"year": 1951, "gender": "Women", "count": 10},
+      {"year": 1955, "gender": "Men", "count": 12}, {"year": 1955, "gender": "Women", "count": 5},
+      {"year": 1959, "gender": "Men", "count": 20}, {"year": 1959, "gender": "Women", "count": 8},
+      {"year": 1963, "gender": "Men", "count": 5},  {"year": 1963, "gender": "Women", "count": 2},
+      {"year": 1967, "gender": "Men", "count": 8},  {"year": 1967, "gender": "Women", "count": 3},
+      {"year": 1971, "gender": "Men", "count": 10}, {"year": 1971, "gender": "Women", "count": 6},
+      {"year": 1975, "gender": "Men", "count": 5},  {"year": 1975, "gender": "Women", "count": 2},
+      {"year": 1979, "gender": "Men", "count": 12}, {"year": 1979, "gender": "Women", "count": 2},
+      {"year": 1983, "gender": "Men", "count": 6},  {"year": 1983, "gender": "Women", "count": 0},
+      {"year": 1987, "gender": "Men", "count": 8},  {"year": 1987, "gender": "Women", "count": 0},
+      {"year": 1991, "gender": "Men", "count": 8},  {"year": 1991, "gender": "Women", "count": 1},
+      {"year": 1995, "gender": "Men", "count": 7},  {"year": 1995, "gender": "Women", "count": 6},
+      {"year": 1999, "gender": "Men", "count": 8},  {"year": 1999, "gender": "Women", "count": 0},
+      {"year": 2003, "gender": "Men", "count": 10}, {"year": 2003, "gender": "Women", "count": 4},
+      {"year": 2007, "gender": "Men", "count": 12}, {"year": 2007, "gender": "Women", "count": 8},
+      {"year": 2011, "gender": "Men", "count": 0},  {"year": 2011, "gender": "Women", "count": 5}, // Datos faltantes en hombres 2011 corregidos visualmente
+      {"year": 2015, "gender": "Men", "count": 15}, {"year": 2015, "gender": "Women", "count": 6},
+      {"year": 2019, "gender": "Men", "count": 14}, {"year": 2019, "gender": "Women", "count": 11},
+      {"year": 2023, "gender": "Men", "count": 20}, {"year": 2023, "gender": "Women", "count": 15}
+    ];
+
+    const dataMedallas = [
+      {"year": 1951, "Medalla": "Oro", "count": 3}, {"year": 1951, "Medalla": "Plata", "count": 3}, {"year": 1951, "Medalla": "Bronce", "count": 0},
+      {"year": 1955, "Medalla": "Oro", "count": 1}, {"year": 1955, "Medalla": "Plata", "count": 1}, {"year": 1955, "Medalla": "Bronce", "count": 1},
+      {"year": 1959, "Medalla": "Oro", "count": 1}, {"year": 1959, "Medalla": "Bronce", "count": 2},
+      {"year": 1963, "Medalla": "Oro", "count": 1}, {"year": 1963, "Medalla": "Plata", "count": 1},
+      {"year": 1967, "Medalla": "Bronce", "count": 2},
+      {"year": 1971, "Medalla": "Bronce", "count": 2},
+      {"year": 1983, "Medalla": "Oro", "count": 1}, {"year": 1983, "Medalla": "Plata", "count": 1}, {"year": 1983, "Medalla": "Bronce", "count": 1},
+      {"year": 1987, "Medalla": "Oro", "count": 1}, {"year": 1987, "Medalla": "Bronce", "count": 1},
+      {"year": 1991, "Medalla": "Oro", "count": 1},
+      {"year": 1995, "Medalla": "Bronce", "count": 1},
+      {"year": 1999, "Medalla": "Oro", "count": 1}, {"year": 1999, "Medalla": "Bronce", "count": 1},
+      {"year": 2003, "Medalla": "Plata", "count": 1},
+      {"year": 2011, "Medalla": "Oro", "count": 1}, {"year": 2011, "Medalla": "Bronce", "count": 1},
+      {"year": 2015, "Medalla": "Oro", "count": 0}, {"year": 2015, "Medalla": "Plata", "count": 0},
+      {"year": 2019, "Medalla": "Oro", "count": 1}, {"year": 2019, "Medalla": "Plata", "count": 1},
+      {"year": 2023, "Medalla": "Oro", "count": 3}, {"year": 2023, "Medalla": "Plata", "count": 2}, {"year": 2023, "Medalla": "Bronce", "count": 2}
+    ];
+
+    // ESPECIFICACIONES VEGA-LITE (Los Gráficos)
+
+    // 1. PARTICIPACIÓN
+    vegaEmbed('#vis1', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "data": {"values": dataParticipacion},
+      "mark": "bar",
+      "width": "container",
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": "Año"},
+        "y": {"field": "count", "type": "quantitative", "title": "N° Atletas"},
+        "color": {"field": "gender", "scale": {"domain": ["Men", "Women"], "range": ["#00469b", "#A42121"]}, "title": "Género"},
+        "tooltip": [{"field": "year"}, {"field": "gender"}, {"field": "count"}]
+      }
+    });
+
+    // 4. MEDALLERO
+    vegaEmbed('#vis4', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "data": {"values": dataMedallas},
+      "mark": "bar",
+      "width": "container",
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": "Año"},
+        "y": {"field": "count", "type": "quantitative", "title": "Cantidad de Medallas"},
+        "color": {"field": "Medalla", "scale": {"domain": ["Oro", "Plata", "Bronce"], "range": ["#FFD700", "#C0C0C0", "#CD7F32"]}, "title": "Medalla"},
+        "tooltip": [{"field": "year"}, {"field": "Medalla"}, {"field": "count"}]
+      }
+    });
+    
+    // (Aquí puedes añadir los gráficos 2 y 3 con lógica similar, pero requieren más datos de punto por punto que son extensos para pegar aquí. 
+    // Si este HTML te funciona, te paso los datos para los gráficos 2 y 3 en el siguiente mensaje para no saturar este bloque).
+
+  </script>
+</body>
+</html>
