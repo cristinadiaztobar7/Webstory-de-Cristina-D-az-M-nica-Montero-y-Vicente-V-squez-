@@ -249,18 +249,17 @@ hr.separador {
 .c6 { background-color: #e0e0e0; animation-duration: 4.5s; animation-delay: -1.5s; }
 
 /* =========================================
-   NUEVA ESTRUCTURA: TEXTO CENTRADO + IMAGEN FLOTANTE
+   NUEVA ESTRUCTURA: CONTENIDO PRINCIPAL CENTRAL
 ========================================= */
 
-/* 1. El Padre: Define el área de juego */
 .contenedor-historia {
-    position: relative;         /* Vital: es la referencia para "atrapar" la imagen */
+    position: relative;         
     width: 100%;
-    max-width: 1400px;          /* Permitimos que sea ancho para que la foto quepa lejos */
-    margin: 50px auto;          /* Centra el contenedor en la pantalla */
+    max-width: 1100px;          /* Nuevo ancho máximo (por ejemplo) */
+    margin: 50px auto;          
     display: flex;
-    justify-content: center;    /* Esto asegura que la CAJA BLANCA quede al medio */
-    padding: 0 20px;
+    justify-content: center;    
+    padding: 0 40px;            /* Relleno interno para no tocar las pistas laterales */
     z-index: 10;
 }
 
@@ -273,9 +272,9 @@ hr.separador {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
     
     width: 100%;               
-    max-width: 600px;           /* Le damos un ancho máximo estricto para que se vea elegante */
+    max-width: 600px;           /* Se mantiene para el texto */
     
-    position: relative;         /* Para asegurar que quede sobre pistas u otros elementos */
+    position: relative;         
     z-index: 2;
 }
 
@@ -556,12 +555,12 @@ hr.separador {
     z-index: 1;
 }
 
-/* 4. RESPONSIVE: Móvil (Pantallas chicas) */
+/* =========================================
+   ESTILO MIXTO: GRÁFICO CENTRADO + IMAGEN FLOTANTE IZQ (REVISIÓN)
+========================================= */
+
 @media (max-width: 1300px) {
-    .contenedor-mixto {
-        flex-direction: column;
-    }
-    
+    /* La columna de la izquierda (fotos) debe volverse estática y centrarse */
     .columna-imagen-izq.posicion-relativa {
         position: static;        /* Deja de flotar */
         transform: none;
@@ -569,6 +568,20 @@ hr.separador {
         width: 100%;
         max-width: 400px;
         left: auto;
+        
+        /* SOLUCIÓN: Poner las 2 fotos en fila en vez de una debajo de otra */
+        flex-direction: row; 
+        justify-content: center;
+    }
+    
+    /* El contenedor de la tarjeta, que antes estaba en columna, ahora está en fila */
+    .tarjeta-contenedor {
+        margin: 0 10px; /* Pequeño margen entre tarjetas */
+    }
+    
+    /* La zona del gráfico principal (lo que antes se alineaba al centro) */
+    .zona-grafico {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
     }
 
 }
@@ -761,7 +774,7 @@ hr.separador {
 
 .placeholder-grafico {
     width: 100%;
-    max-width: 900px;
+    max-width: 100%;
     height: 500px;
     background-color: #f0f0f0; /* Gris claro */
     border: 4px dashed #bbb;   /* Borde punteado de "aquí va algo" */
@@ -780,7 +793,7 @@ hr.separador {
     margin-bottom: 10px;
 }
 
-/* Contenedor para apilar cosas en el centro sin que floten a los lados */
+/* --- BUSCA ESTO EN TU style.css Y ELIMINA LA LÍNEA DE PADDING --- */
 .contenedor-vertical-centrado {
     display: flex;
     flex-direction: column;
@@ -790,7 +803,28 @@ hr.separador {
     margin: 0 auto;
     z-index: 10;
     position: relative;
-    padding-right: 15%; /* Dejamos espacio a la derecha para que se vea la pista */
+    /* ELIMINA ESTA LÍNEA -> padding-right: 15%; */ 
+}
+/* ---------------------------------------------------------------- */
+
+/* El placeholder se centrará automáticamente dentro de este nuevo contenedor */
+
+/* Ajuste visual menor para el placeholder */
+.placeholder-grafico {
+    /* Mantener estilo actual: */
+    width: 100%;
+    max-width: 100%; 
+    height: 350px; /* Reducido para que no sea tan grande */
+    background-color: #f0f0f0;
+    border: 4px dashed #bbb;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #888;
+    padding: 20px;
 }
 
 /* =========================================
@@ -899,65 +933,71 @@ hr.separador {
 }
 
 /* =========================================
-   ARREGLO VERTICAL: FOSO ARRIBA, GRÁFICO ABAJO (CENTRADO PERFECTO)
+   ARREGLO FINAL DEFINITIVO: FOSO Y CARTAS SALTO
 ========================================= */
 
-/* =========================================
-   ARREGLO FINAL: FOSO Y CARTAS SALTO
-========================================= */
-
-/* 1. El contenedor que abraza cartas y gráfico */
 .contenedor-inferior-mixto {
     position: relative;
     width: 100%;
-    max-width: 1400px;       /* Ancho total disponible */
-    display: flex;
-    justify-content: center; /* Centra el gráfico */
-    margin-top: 50px;
+    
+    /* 1. ANCHO: Usamos % para acercarnos más a los bordes de la pista */
+    max-width: 95%; 
+    
+    margin: 50px auto; 
+    
+    /* 2. FLEXBOX: Alineación */
+    display: flex;           
+    flex-direction: row;     
+    align-items: center;     /* Centrado verticalmente */
+    
+    /* --- CAMBIO CLAVE: "flex-start" empuja todo a la IZQUIERDA --- */
+    justify-content: flex-start; 
+    
+    gap: 30px;               /* Espacio entre cartas y gráfico */
     padding: 0 20px;
+    z-index: 10;
 }
 
-/* 2. Las Cartas Flotantes (Izquierda) */
 .columna-cartas-izq {
-    position: absolute;
-    left: 0;                 /* Pegadas al borde izquierdo del ancho 1400px */
-    top: 50%;
-    transform: translateY(-50%);
-    
+    position: relative; 
     display: flex;
-    flex-direction: column;  /* Una debajo de otra */
-    gap: 40px;               /* Espacio vertical entre cartas */
-    width: 250px;            /* Ancho fijo de cartas */
+    flex-direction: column; 
+    gap: 40px;               
+    
+    /* Ancho fijo para las cartas */
+    width: 250px;            
+    flex-shrink: 0; /* Prohíbe que se aplasten */         
     z-index: 20;
 }
 
-/* 3. La Zona del Gráfico (Más angosta para dejar espacio) */
 .zona-grafico-inferior {
-    width: 100%;
-    max-width: 700px;        /* <--- CLAVE: Lo hacemos más angosto */
+    flex: 1; /* Ocupa TODO el espacio restante a la derecha */
     position: relative;
     z-index: 1;
+    /* No ponemos width aquí, dejamos que flex actúe */
 }
 
-/* Ajustes Responsive */
-@media (max-width: 1200px) {
+/* --- SOLUCIÓN "ROMPE CANDADOS" --- */
+/* Esto fuerza a CUALQUIER cosa que pongas dentro de la zona del gráfico 
+   (sea un div, un iframe, un marco-grafico o un placeholder) 
+   a estirarse al 100% y olvidar sus límites anteriores */
+.zona-grafico-inferior > * {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* RESPONSIVE: Para celulares y tablets verticales */
+@media (max-width: 1100px) {
     .contenedor-inferior-mixto {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Uno abajo del otro */
+        max-width: 100%;
     }
     
     .columna-cartas-izq {
-        position: static;    /* Dejan de flotar */
-        transform: none;
-        flex-direction: row; /* Se ponen lado a lado arriba */
         width: 100%;
-        justify-content: center;
+        flex-direction: row; /* Cartas lado a lado */
+        justify-content: flex-start;
         margin-bottom: 40px;
-        gap: 20px;
-    }
-    
-    .zona-grafico-inferior {
-        max-width: 100%;
     }
 }
 
@@ -1215,4 +1255,144 @@ hr.separador {
     .columna-cartas-flotantes-der {
         flex-direction: column;  /* Cartas verticales en móvil */
     }
+}
+
+/* --- PARCHE FINAL DE EMERGENCIA --- */
+
+/* 1. Obliga al contenedor a alinearse a la izquierda */
+.contenedor-inferior-mixto {
+    justify-content: flex-start !important;
+    max-width: 98% !important; /* Usa casi toda la pantalla */
+}
+
+/* 2. Obliga al cuadro gris a estirarse sí o sí */
+.placeholder-grafico {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* 3. Asegura que la zona del gráfico crezca */
+.zona-grafico-inferior {
+    flex: 1 !important; /* Toma todo el espacio sobrante */
+    max-width: none !important;
+}
+
+/* =========================================
+   ESTILOS SECCIÓN FINAL (GRÁFICO)
+========================================= */
+
+.contenedor-grafico-final {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;      /* Ancho generoso para el gráfico */
+    margin: 50px auto;
+    padding-left: 10%;      /* Empujamos un poco a la derecha para no tapar la pista izquierda */
+    padding-right: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Títulos sobre el gráfico */
+.encabezado-grafico {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.encabezado-grafico h2 {
+    color: white; /* Título en blanco para resaltar sobre el fondo rojo */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.2rem;
+}
+
+.encabezado-grafico p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+}
+
+/* La caja blanca que contiene el gráfico */
+.marco-blanco-grafico {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* Sombra elegante */
+    
+    /* Borde decorativo inferior similar al de conclusiones */
+    border-bottom: 6px solid #E5AC3F; 
+}
+
+/* El espacio donde va el gráfico real */
+.placeholder-grafico-final {
+    width: 100%;
+    height: 450px; /* Altura fija */
+    background-color: #f9f9f9;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .contenedor-grafico-final {
+        padding-left: 20px; /* En móvil quitamos el margen de la pista para usar todo el espacio */
+    }
+    
+    .placeholder-grafico-final {
+        height: 300px; /* Menos alto en celulares */
+    }
+}
+
+/* =========================================
+   DISEÑO DE LA META FINAL
+========================================= */
+
+.contenedor-meta {
+    position: absolute;
+    bottom: 50px;       /* Distancia desde el final de la página */
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;         /* Para que quede encima de las líneas de carril */
+}
+
+/* El texto pintado en el suelo */
+.texto-meta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;    /* Tamaño grande */
+    color: rgba(255, 255, 255, 0.6); /* Blanco semitransparente (efecto pintura gastada) */
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    
+    /* Transformación para que parezca perspectiva sobre la pista */
+    transform: scaleY(1.5); 
+}
+
+/* La franja de ajedrez (Checkered Flag) hecha con CSS puro */
+.cinta-ajedrez {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    
+    /* El truco del patrón de ajedrez */
+    background-image:
+        linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000),
+        linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000);
+    
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+    
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0.9;
 }
